@@ -28,6 +28,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 		contact.email = "smmeliny@uwaterloo.ca" // <- hit me up ladies
 		contact.phoneNumber = "420-8008-6969"
 		contact.twitter = "Shaves"
+        contact.github = "Shaves"
 		contact.photo = UIImagePNGRepresentation(UIImage(named: "stevo.png")!)
 		return contact
 		}()
@@ -53,10 +54,10 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ContactTableViewCell
 
         let contact: ContactObject = c2//sortedPeers[indexPath.row]
-        contact.twitter = "Bless"
-        contact.facebook = "Jonathan Galperin"
-        contact.linkedin = "sweg"
-        contact.github = "yey"
+//        contact.twitter = "Bless"
+//        contact.facebook = "Jonathan Galperin"
+//        contact.linkedin = "sweg"
+//        contact.github = "yey"
         cell.contact = contact
         cell.nameLabel?.text = contact.name
 		if let photoData = contact.photo {
@@ -66,7 +67,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedPeers.count
+        return sortedPeers.count + 1
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
