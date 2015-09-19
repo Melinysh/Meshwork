@@ -24,7 +24,10 @@ class StatsViewController: UIViewController {
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print("Did select item at index: \(indexPath)")
             if indexPath == 0 {
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.dismissViewControllerAnimated(true, completion: {
+                    let menuView = BTNavigationDropdownMenu(title: self.navigationItems[0], items: self.navigationItems)
+                    self.navigationItem.titleView = menuView
+                })
             }
         }
     }
