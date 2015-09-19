@@ -8,12 +8,25 @@
 
 import Foundation
 import UIKit
+import BTNavigationDropdownMenu
 
 class StatsViewController: UIViewController {
+    
+    let navigationItems = ["Near Me", "Stats"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.layoutViews()
+        
+        let menuView = BTNavigationDropdownMenu(title: navigationItems[1], items: navigationItems)
+        self.navigationItem.titleView = menuView
+        
+        menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+            print("Did select item at index: \(indexPath)")
+            if indexPath == 0 {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
     }
     
     func layoutViews() {
