@@ -18,7 +18,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 		contact.email = "shaves@uwaterloo.ca" // <- hit me up ladies
 		contact.phoneNumber = "101-1010-10101"
 		contact.twitter = "Shaves"
-		contact.photo = UIImage(named: "stevo.png")
+		contact.photo = UIImagePNGRepresentation(UIImage(named: "stevo.png")!)
 		return contact
 	}()
 	
@@ -28,7 +28,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 		contact.email = "smmeliny@uwaterloo.ca" // <- hit me up ladies
 		contact.phoneNumber = "420-8008-6969"
 		contact.twitter = "Shaves"
-		contact.photo = UIImage(named: "stevo.png")
+		contact.photo = UIImagePNGRepresentation(UIImage(named: "stevo.png")!)
 		return contact
 		}()
 	
@@ -44,7 +44,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		peerManager = MPCManager(delegate: self, selfContact: c2)
+		peerManager = MPCManager(delegate: self, selfContact: UIDevice().name == "iPhone" ? c : c2) //changed to make testing easier
 		peerManager.advertiser.startAdvertisingPeer()
 		peerManager.browser.startBrowsingForPeers()
     }
@@ -54,7 +54,9 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 
         let contact: ContactObject = sortedPeers[indexPath.row]
         cell.nameLabel?.text = contact.name
-		cell.photo.image = contact.photo
+		if let photoData = contact.photo {
+			cell.photo.image = UIImage(data: photoData)
+		}
         return cell
     }
     
