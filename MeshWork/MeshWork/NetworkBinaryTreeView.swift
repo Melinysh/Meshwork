@@ -30,6 +30,8 @@ class NetworkBinaryTreeView: UIView {
     
     var allLines = [UIBezierPath]()
 	var allNodes = [UIBezierPath]()
+    var curX: CGFloat = 0
+    var curY: CGFloat = 0
 	
 	var controller : NetworkBinaryTreeViewController!
     
@@ -39,7 +41,7 @@ class NetworkBinaryTreeView: UIView {
     var known: Bool = true
     var numberOfContactsDrawn: Int = 0
 	
-	var startPoint : CGPoint? = nil
+	//var startPoint : CGPoint? = nil
 	
 	
     
@@ -59,6 +61,10 @@ class NetworkBinaryTreeView: UIView {
 		self.init()
 		self.peers = peers // [c1,c2,c3] for testing only
 		self.contacts = contacts
+
+        self.curX = center.x
+        self.curY = center.y
+
 		self.backgroundColor = UIColor.whiteColor()
 		self.clearsContextBeforeDrawing = true
 		self.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: "scale:"))
@@ -80,20 +86,30 @@ class NetworkBinaryTreeView: UIView {
 	
 	var initialPanDeltaX : CGFloat!
 	var initialPanDeltaY : CGFloat!
+    var deltaX : CGFloat = 0
+    var deltaY : CGFloat = 0
+    var initPoint: CGPoint = CGPoint(x: 0, y: 0)
+    var shiftPoint: CGPoint = CGPoint(x:0, y:0)
+    
 	func pan(gesture : UIPanGestureRecognizer) {
-		
-		if gesture.state == UIGestureRecognizerState.Began {
+        
+        if gesture.state == UIGestureRecognizerState.Began {
 			known = true
-			let place = gesture.locationInView(self)
-			let rootLoc = allNodes.first!.currentPoint
-			initialPanDeltaX = place.x - rootLoc.x
-			initialPanDeltaY = place.y - rootLoc.y
+			initPoint = gesture.locationInView(self)
+            shiftPoint = CGPoint(x: deltaX, y: deltaY)
+			/*initialPanDeltaX = place.x - rootLoc.x
+			initialPanDeltaY = place.y - rootLoc.y*/
 		} else if gesture.state == .Changed {
 			known = true
 			let place = gesture.locationInView(self)
-			startPoint = CGPoint(x: place.x + initialPanDeltaX, y: place.y + initialPanDeltaY)
+            let x = (place.x - initPoint.x)
+            let y = (place.y - initPoint.y)
+            
+            deltaX = shiftPoint.x + x
+            deltaY = shiftPoint.y + y
+			//startPoint = CGPoint(x: place.x + initialPanDeltaX, y: place.y + initialPanDeltaY)
 			self.setNeedsDisplay()
-		}
+        }
 		
 		
 	}
@@ -154,12 +170,11 @@ class NetworkBinaryTreeView: UIView {
         if(known){
             color = UIColor.blueColor()
         }else{
-            /*color = UIColor(
+            color = UIColor(
                 red:0.0,
                 green:0.0,
                 blue:0.0,
-                alpha:0.3)*/
-			color = UIColor.greenColor()
+                alpha:0.3)
         }
         
         return color
@@ -180,11 +195,11 @@ class NetworkBinaryTreeView: UIView {
     }
     
     
-    private func drawBinaryTree(angle: Double, startPoint: CGPoint, iter: CGFloat){
+    private func drawBinaryTree(angle: Double, x: CGFloat, y: CGFloat, iter: CGFloat){
         if(iter > 0){
             
-            let x2: CGFloat = startPoint.x + ((CGFloat(cos(angle.degreesToRadians)) * scale) * iter)
-            let y2: CGFloat = startPoint.y + ((CGFloat(sin(angle.degreesToRadians)) * scale) * iter)
+            let x2: CGFloat = x + ((CGFloat(cos(angle.degreesToRadians)) * scale) * iter)
+            let y2: CGFloat = y + ((CGFloat(sin(angle.degreesToRadians)) * scale) * iter)
             
             if (numberOfContactsDrawn >= contacts.count){known = false}
             
@@ -194,6 +209,7 @@ class NetworkBinaryTreeView: UIView {
             color.setStroke()
             color.setFill()
             
+            let startPoint = CGPoint(x: x,y: y)
             if(numberOfContactsDrawn < (contacts.count + peers.count)){
                 let l = drawLine(startPoint, endPoint: endPoint)
 				l.stroke()
@@ -204,8 +220,8 @@ class NetworkBinaryTreeView: UIView {
                 numberOfContactsDrawn++
             }
             
-            drawBinaryTree(angle + 40, startPoint: endPoint, iter: iter - 1)
-            drawBinaryTree(angle - 40, startPoint: endPoint, iter: iter - 1)
+            drawBinaryTree(angle + 40, x: endPoint.x, y: endPoint.y, iter: iter - 1)
+            drawBinaryTree(angle - 40, x: endPoint.x, y: endPoint.y, iter: iter - 1)
         }
     }
     
@@ -218,9 +234,12 @@ class NetworkBinaryTreeView: UIView {
 		allLines.forEach { $0.removeAllPoints() }
 		allLines = []
 		allNodes = []
-		print("Cleared lines and nodes")
+		
 		let nodeCount = contacts.count + peers.count
-        drawBinaryTree(-90 , startPoint: startPoint ?? center, iter: CGFloat(findHighestSumOfTwoPower(nodeCount)) + 1)
+        curX = center.x + deltaX
+        curY = center.y + deltaY
+        print("\(curX) \(curY)")
+        drawBinaryTree(-90 , x: curX , y: curY, iter: CGFloat(findHighestSumOfTwoPower(nodeCount)) + 1)
         numberOfContactsDrawn = 0
     }
 }
