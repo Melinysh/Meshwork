@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeshWork/MainTableViewController.swift"
-            timestampString = "464358600.807667"
+            timestampString = "464359698.780513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "receievedContactFromPeer(_:contact:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "lostPeer(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -240,6 +240,22 @@
             startingLineNumber = "24"
             endingLineNumber = "24"
             landmarkName = "init(coder:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeshWork/DetailContactViewController.swift"
+            timestampString = "464362646.694915"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "addToContacts(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
