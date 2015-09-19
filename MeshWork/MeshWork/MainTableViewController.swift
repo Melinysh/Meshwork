@@ -67,6 +67,9 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 			peerManager.browser.startBrowsingForPeers()
 		}
     }
+    override func viewDidAppear(animated: Bool) {
+        peerManager.delegate = self
+    }
 	
     override func viewWillAppear(animated: Bool) {
     }
