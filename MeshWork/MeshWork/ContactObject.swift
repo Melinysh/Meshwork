@@ -41,6 +41,7 @@ class ContactObject: NSObject, NSCoding {
     }
     
   func encodeWithCoder(aCoder: NSCoder) {
+	super.description
     aCoder.encodeObject(photo, forKey: "photo")
     aCoder.encodeObject(name, forKey: "name")
     aCoder.encodeObject(phoneNumber, forKey: "phoneNumber")
