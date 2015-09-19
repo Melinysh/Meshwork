@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSource, MPCManagerDelegate {
     
@@ -29,6 +30,8 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
     @IBOutlet weak var treeView: NetworkBinaryTreeView! {
         didSet{
             treeView.dataSource = self
+			treeView.contacts = deviceContacts
+			treeView.peers = sortedPeers
             treeView.addGestureRecognizer(UIPinchGestureRecognizer(target: treeView, action: "scale:"))
         }
     }
@@ -44,12 +47,10 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
         
         func lostPeer(peer: MCPeerID) {
             peers.removeValueForKey(peer)
-            tableView.reloadData()
         }
         
         func receievedContactFromPeer(peer: MCPeerID, contact: ContactObject) {
             peers[peer] = contact
-            tableView.reloadData()
         }
     }
 
@@ -59,11 +60,11 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
     }
     
     func contacts(sender: NetworkBinaryTreeView) -> [ContactObject] {
-        return sortedPeers
+        return deviceContacts
     }
     
-    func numberOfUsers(sender: NetworkBinaryTreeView) -> Int? {
-        return 24
+    func peers(sender: NetworkBinaryTreeView) -> [ContactObject] {
+        return sortedPeers
     }
     
     //MARK: - MPCManagerDelegate

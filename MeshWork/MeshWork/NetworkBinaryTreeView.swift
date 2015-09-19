@@ -9,8 +9,8 @@
 import UIKit
 
 protocol NetworkBinaryTreeDataSource: class {
-    func contacts(sender: NetworkBinaryTreeView) -> [String]?
-    func numberOfUsers(sender: NetworkBinaryTreeView) -> Int?
+    func contacts(sender: NetworkBinaryTreeView) -> [ContactObject]
+    func peers(sender: NetworkBinaryTreeView) -> [ContactObject]
 }
 
 extension Double {
@@ -37,9 +37,9 @@ class NetworkBinaryTreeView: UIView {
     weak var dataSource: NetworkBinaryTreeDataSource?
     
     //TODO:  ask about not having contacts default
-    /*var contacts = ["jim", "jack", "ass", "dick", "jack", "jack", "ass", "dick", "jack", "jack", "ass", "dick", "jack"]
-    var numberOfUsers = 24*/
-    
+	var contacts : [ContactObject]!
+	var peers : [ContactObject]!
+	
     private struct Constants {
         static let nodeRadius: CGFloat = 4
     }
@@ -93,7 +93,7 @@ class NetworkBinaryTreeView: UIView {
                 currentPower++
             }
         }
-        println(currentSum)
+        print(currentSum)
         return Int(currentPower)
     }
     
@@ -101,8 +101,8 @@ class NetworkBinaryTreeView: UIView {
     private func drawBinaryTree(angle: Double, startPoint: CGPoint, iter: CGFloat){
         if(iter > 0){
             
-            var x2: CGFloat = startPoint.x + ((CGFloat(cos(angle.degreesToRadians)) * scale) * iter)
-            var y2: CGFloat = startPoint.y + ((CGFloat(sin(angle.degreesToRadians)) * scale) * iter)
+            let x2: CGFloat = startPoint.x + ((CGFloat(cos(angle.degreesToRadians)) * scale) * iter)
+            let y2: CGFloat = startPoint.y + ((CGFloat(sin(angle.degreesToRadians)) * scale) * iter)
             
             if (numberOfContactsDrawn >= contacts.count){known = false}
             
@@ -112,7 +112,7 @@ class NetworkBinaryTreeView: UIView {
             color.setStroke()
             color.setFill()
             
-            if(numberOfContactsDrawn < numberOfUsers){
+            if(numberOfContactsDrawn < peers.count){
                 drawLine(startPoint, endPoint: endPoint).stroke()
                 drawNode(endPoint).fill()
                 numberOfContactsDrawn++
@@ -124,10 +124,9 @@ class NetworkBinaryTreeView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        
-        
-        println(CGFloat(findHighestSumOfTwoPower(numberOfUsers)))
-        drawBinaryTree(-90 , startPoint: viewCenter, iter: CGFloat(findHighestSumOfTwoPower(numberOfUsers)) + 1)
+		
+        print(CGFloat(findHighestSumOfTwoPower(peers.count)))
+        drawBinaryTree(-90 , startPoint: viewCenter, iter: CGFloat(findHighestSumOfTwoPower(peers.count)) + 1)
         numberOfContactsDrawn = 0
     }
 }

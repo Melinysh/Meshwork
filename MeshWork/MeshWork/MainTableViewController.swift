@@ -31,6 +31,11 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
 	var sortedPeers = [ContactObject]()
 
+	@IBAction func showTree(sender: AnyObject) {
+		let treeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("treeVC") as! NetworkBinaryTreeViewController
+		treeVC.manager = peerManager
+		treeVC.peers = peers
+	}
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
