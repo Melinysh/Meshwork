@@ -12,6 +12,8 @@
 		DC51FC7A1BAD13F000E09780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC781BAD13F000E09780 /* Main.storyboard */; };
 		DC51FC7C1BAD13F000E09780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC7B1BAD13F000E09780 /* Assets.xcassets */; };
 		DC51FC7F1BAD13F000E09780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC7D1BAD13F000E09780 /* LaunchScreen.storyboard */; };
+		DC51FC871BAD14E400E09780 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC51FC861BAD14E400E09780 /* MPCManager.swift */; settings = {ASSET_TAGS = (); }; };
+		DC51FC891BAD161500E09780 /* ContactObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC51FC881BAD161500E09780 /* ContactObject.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		DC51FC7B1BAD13F000E09780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC51FC7E1BAD13F000E09780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC51FC801BAD13F000E09780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC51FC861BAD14E400E09780 /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
+		DC51FC881BAD161500E09780 /* ContactObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				DC51FC741BAD13F000E09780 /* AppDelegate.swift */,
 				DC51FC761BAD13F000E09780 /* ViewController.swift */,
+				DC51FC861BAD14E400E09780 /* MPCManager.swift */,
+				DC51FC881BAD161500E09780 /* ContactObject.swift */,
 				DC51FC781BAD13F000E09780 /* Main.storyboard */,
 				DC51FC7B1BAD13F000E09780 /* Assets.xcassets */,
 				DC51FC7D1BAD13F000E09780 /* LaunchScreen.storyboard */,
@@ -135,7 +141,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC51FC771BAD13F000E09780 /* ViewController.swift in Sources */,
+				DC51FC891BAD161500E09780 /* ContactObject.swift in Sources */,
 				DC51FC751BAD13F000E09780 /* AppDelegate.swift in Sources */,
+				DC51FC871BAD14E400E09780 /* MPCManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
