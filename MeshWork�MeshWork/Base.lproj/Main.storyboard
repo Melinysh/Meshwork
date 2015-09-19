@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="md9-H2-oLf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--People Nearby-->
+        <scene sceneID="7hL-WO-gLz">
+            <objects>
+                <tableViewController id="xGP-gs-rVf" customClass="MainTableViewController" customModule="MeshWork" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="al5-e1-0nR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="ctd-xq-LJn" customClass="ContactTableViewCell" customModule="MeshWork" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ctd-xq-LJn" id="54B-hW-w2u">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VHF-8C-pIR">
+                                            <rect key="frame" x="33" y="5" width="70" height="70"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="R3L-xx-99A"/>
+                                                <constraint firstAttribute="width" constant="70" id="eL9-G0-1Rt"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hms-bR-5Bb">
+                                            <rect key="frame" x="123" y="29.5" width="459" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hms-bR-5Bb" secondAttribute="trailing" constant="10" id="Rl4-E0-7nh"/>
+                                        <constraint firstItem="VHF-8C-pIR" firstAttribute="leading" secondItem="54B-hW-w2u" secondAttribute="leadingMargin" constant="25" id="VFs-y4-Zaq"/>
+                                        <constraint firstItem="hms-bR-5Bb" firstAttribute="centerY" secondItem="VHF-8C-pIR" secondAttribute="centerY" id="a87-yn-LnB"/>
+                                        <constraint firstItem="VHF-8C-pIR" firstAttribute="top" secondItem="54B-hW-w2u" secondAttribute="topMargin" constant="-3" id="eFm-GW-lO5"/>
+                                        <constraint firstItem="hms-bR-5Bb" firstAttribute="leading" secondItem="VHF-8C-pIR" secondAttribute="trailing" constant="20" id="iE2-1h-dAn"/>
+                                        <constraint firstItem="hms-bR-5Bb" firstAttribute="leading" secondItem="54B-hW-w2u" secondAttribute="leadingMargin" constant="124" id="tIW-Wh-HF8"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="tIW-Wh-HF8"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="nameLabel" destination="hms-bR-5Bb" id="o87-bF-7OR"/>
+                                    <outlet property="photo" destination="VHF-8C-pIR" id="2UQ-Uh-sTc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xGP-gs-rVf" id="bJj-HS-dby"/>
+                            <outlet property="delegate" destination="xGP-gs-rVf" id="I0n-7A-aia"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="People Nearby" id="pwd-8G-YKb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0h-H6-mOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="491" y="1065"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ACD-iH-cpm">
+            <objects>
+                <navigationController id="md9-H2-oLf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qde-mq-8w6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xGP-gs-rVf" kind="relationship" relationship="rootViewController" id="Wnx-F8-Imp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAm-uP-raQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-328" y="1065"/>
+        </scene>
+    </scenes>
+</document>

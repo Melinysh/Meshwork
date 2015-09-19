@@ -18,7 +18,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 		contact.email = "shaves@uwaterloo.ca" // <- hit me up ladies
 		contact.phoneNumber = "101-1010-10101"
 		contact.twitter = "Shaves"
-		//	contact.photo = UIImage(named: "stevo.png")
+		contact.photo = UIImage(named: "stevo.png")
 		return contact
 	}()
 	
@@ -44,17 +44,17 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		peerManager = MPCManager(delegate: self, selfContact: c)
+		peerManager = MPCManager(delegate: self, selfContact: c2)
 		peerManager.advertiser.startAdvertisingPeer()
 		peerManager.browser.startBrowsingForPeers()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ContactTableViewCell
 
         let contact: ContactObject = sortedPeers[indexPath.row]
-        cell.textLabel?.text = contact.name
-		cell.detailTextLabel?.text = contact.email
+        cell.nameLabel?.text = contact.name
+		cell.photo.image = contact.photo
         return cell
     }
     
