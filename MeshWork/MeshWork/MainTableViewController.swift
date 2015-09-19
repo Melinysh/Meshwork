@@ -58,7 +58,24 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
             }
         }
         
-//		
+        let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+        inputForm.beaneathVC = self
+        presentViewController(inputForm, animated: true, completion: nil)
+        
+//		if selfContact == nil {
+//			let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+//			inputForm.beaneathVC = self 
+//			presentViewController(inputForm, animated: true, completion: nil)
+//		} else {
+//			peerManager = MPCManager(delegate: self, selfContact: selfContact)
+//			peerManager.advertiser.startAdvertisingPeer()
+//			peerManager.browser.startBrowsingForPeers()
+//		}
+        
+        peerManager = MPCManager(delegate: self, selfContact: selfContact)
+        peerManager.advertiser.startAdvertisingPeer()
+        peerManager.browser.startBrowsingForPeers()
+//
 //        let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
 //        inputForm.beaneathVC = self
 //        presentViewController(inputForm, animated: true, completion: nil)
@@ -83,6 +100,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     }
 	
     override func viewWillAppear(animated: Bool) {
+    
     }
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

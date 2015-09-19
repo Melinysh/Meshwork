@@ -1,14 +1,18 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DB927FC189195C57978152568DC3CEE0959216CA",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DB927FC189195C57978152568DC3CEE0959216CA+++85E5AAE",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "DB927FC189195C57978152568DC3CEE0959216CA" : 0
+    "DB927FC189195C57978152568DC3CEE0959216CA+++85E5AAE" : 0,
+    "DB927FC189195C57978152568DC3CEE0959216CA+++B39C12A" : 0,
+    "DB927FC189195C57978152568DC3CEE0959216CA+++6EA9846" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C98F778E-086B-4A26-A03C-A002CE2EEFF3",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "DB927FC189195C57978152568DC3CEE0959216CA" : ""
+    "DB927FC189195C57978152568DC3CEE0959216CA+++85E5AAE" : "Meshwork\/",
+    "DB927FC189195C57978152568DC3CEE0959216CA+++B39C12A" : "",
+    "DB927FC189195C57978152568DC3CEE0959216CA+++6EA9846" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "MeshWork",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -17,12 +21,17 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Melinysh\/Meshwork",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DB927FC189195C57978152568DC3CEE0959216CA"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DB927FC189195C57978152568DC3CEE0959216CA+++6EA9846"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Melinysh\/Meshwork",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DB927FC189195C57978152568DC3CEE0959216CA+++85E5AAE"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Melinysh\/Meshwork.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DB927FC189195C57978152568DC3CEE0959216CA"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DB927FC189195C57978152568DC3CEE0959216CA+++B39C12A"
     }
   ]
 }
