@@ -110,7 +110,13 @@
                             <outlet property="delegate" destination="xGP-gs-rVf" id="I0n-7A-aia"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="People Nearby" id="pwd-8G-YKb"/>
+                    <navigationItem key="navigationItem" title="People Nearby" id="pwd-8G-YKb">
+                        <barButtonItem key="rightBarButtonItem" title="Tree" id="Rzx-a8-jqH">
+                            <connections>
+                                <action selector="showTree:" destination="xGP-gs-rVf" id="vvQ-pd-zkA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0h-H6-mOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,6 +219,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bi0-85-KxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1318" y="1059"/>
+        </scene>
+        <!--Network Binary Tree View Controller-->
+        <scene sceneID="VDz-gq-KMh">
+            <objects>
+                <viewController storyboardIdentifier="treeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VDF-Y7-Efc" customClass="NetworkBinaryTreeViewController" customModule="MeshWork" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LEP-be-C9e"/>
+                        <viewControllerLayoutGuide type="bottom" id="UFb-eV-emc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8tp-4o-ppY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QVi-W4-f9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-243" y="1822"/>
         </scene>
         <!--Contact Input Form View Controller-->
         <scene sceneID="SMG-O6-wdG">

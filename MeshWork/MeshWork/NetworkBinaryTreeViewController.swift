@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSource, MPCManagerDelegate {
     
@@ -14,28 +15,31 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
     let contactManager = ContactsManager()
     var peers = [MCPeerID : ContactObject]() {
         didSet {
-            sortedPeers = Array(peers.values).sort { $0.0.name < $0.1.name }
+            sortedPeers = Set<ContactObject>(peers.values)
         }
     }
     
-    var sortedPeers = [ContactObject]() {
+    var sortedPeers = Set<ContactObject>() {
         didSet {
-            deviceContacts = sortedPeers.filter{ contactManager.doesHaveContactForName($0.name) }
+            deviceContacts = Set<ContactObject>(Array(sortedPeers).filter{ contactManager.doesHaveContactForName($0.name) })
+			sortedPeers = sortedPeers.subtract(deviceContacts)
         }
     }
     
-    var deviceContacts = [ContactObject]()
+    var deviceContacts = Set<ContactObject>()
     
     @IBOutlet weak var treeView: NetworkBinaryTreeView! {
         didSet{
             treeView.dataSource = self
-            treeView.addGestureRecognizer(UIPinchGestureRecognizer(target: treeView, action: "scale:"))
+			treeView.frame = view.frame
+			self.view = treeView
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        manager.delegate = self 
+        manager.delegate = self
+		treeView = NetworkBinaryTreeView(contacts: [ContactObject](), peers: [ContactObject]())
         // Do any additional setup after loading the view.
     }
     
@@ -44,12 +48,10 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
         
         func lostPeer(peer: MCPeerID) {
             peers.removeValueForKey(peer)
-            tableView.reloadData()
         }
         
         func receievedContactFromPeer(peer: MCPeerID, contact: ContactObject) {
             peers[peer] = contact
-            tableView.reloadData()
         }
     }
 
@@ -59,11 +61,19 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
     }
     
     func contacts(sender: NetworkBinaryTreeView) -> [ContactObject] {
+<<<<<<< HEAD
         return deviceContacts
     }
     
     func peers(sender: NetworkBinaryTreeView) -> [ContactObject] {
         return sortedPeers
+=======
+        return  Array(deviceContacts)
+    }
+    
+    func peers(sender: NetworkBinaryTreeView) -> [ContactObject] {
+        return Array(sortedPeers)
+>>>>>>> 2686b918bffd35021e1e5e73d87a861bdea6eec8
     }
     
     //MARK: - MPCManagerDelegate

@@ -31,24 +31,21 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
 	var sortedPeers = [ContactObject]()
 
+	@IBAction func showTree(sender: AnyObject) {
+		let treeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("treeVC") as! NetworkBinaryTreeViewController
+		treeVC.manager = peerManager
+		treeVC.peers = peers
+		navigationController?.pushViewController(treeVC, animated: true)
+	}
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
 		if let contactData = NSUserDefaults.standardUserDefaults().dataForKey("selfContact") {
 			selfContact = NSKeyedUnarchiver.unarchiveObjectWithData(contactData) as! ContactObject
-		}
-		
-		if selfContact == nil {
-			let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
-			inputForm.beaneathVC = self 
-			presentViewController(inputForm, animated: true, completion: nil)
-		} else {
-			peerManager = MPCManager(delegate: self, selfContact: selfContact)
-			peerManager.advertiser.startAdvertisingPeer()
-			peerManager.browser.startBrowsingForPeers()
-		}
-		
+
+        }
+        
         let menuView = BTNavigationDropdownMenu(title: navigationItems.first!, items: navigationItems)
         self.navigationItem.titleView = menuView
         
@@ -60,9 +57,29 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
                 self.presentViewController(nv, animated: true, completion: nil)
             }
         }
+        
+//		
+//        let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+//        inputForm.beaneathVC = self
+//        presentViewController(inputForm, animated: true, completion: nil)
+
+		if selfContact == nil {
+			let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+			inputForm.beaneathVC = self 
+			presentViewController(inputForm, animated: true, completion: nil)
+		} else {
+			peerManager = MPCManager(delegate: self, selfContact: selfContact)
+			peerManager.advertiser.startAdvertisingPeer()
+			peerManager.browser.startBrowsingForPeers()
+		}
     }
     override func viewDidAppear(animated: Bool) {
-        peerManager.delegate = self
+		if selfContact != nil {
+			if peerManager == nil {
+				peerManager = MPCManager(delegate: self, selfContact: selfContact)
+			}
+			peerManager.delegate = self
+		}
     }
 	
     override func viewWillAppear(animated: Bool) {

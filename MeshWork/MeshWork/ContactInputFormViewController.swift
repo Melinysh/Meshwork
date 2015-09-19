@@ -39,6 +39,8 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
 		photoPicker.allowsEditing = true
 		photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
 		
+		
+        // Do any additional setup after loading the view.
 		if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front) {
 			cameraPicker.delegate = self
 			cameraPicker.allowsEditing = true
