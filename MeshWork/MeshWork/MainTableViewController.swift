@@ -42,18 +42,9 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 		
 		if let contactData = NSUserDefaults.standardUserDefaults().dataForKey("selfContact") {
 			selfContact = NSKeyedUnarchiver.unarchiveObjectWithData(contactData) as! ContactObject
-		}
-		
-		if selfContact == nil {
-			let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
-			inputForm.beaneathVC = self 
-			presentViewController(inputForm, animated: true, completion: nil)
-		} else {
-			peerManager = MPCManager(delegate: self, selfContact: selfContact)
-			peerManager.advertiser.startAdvertisingPeer()
-			peerManager.browser.startBrowsingForPeers()
-		}
-		
+
+        }
+        
         let menuView = BTNavigationDropdownMenu(title: navigationItems.first!, items: navigationItems)
         self.navigationItem.titleView = menuView
         
@@ -65,6 +56,21 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
                 self.presentViewController(nv, animated: true, completion: nil)
             }
         }
+        
+//		
+//        let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+//        inputForm.beaneathVC = self
+//        presentViewController(inputForm, animated: true, completion: nil)
+        
+		if selfContact == nil {
+			let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+			inputForm.beaneathVC = self 
+			presentViewController(inputForm, animated: true, completion: nil)
+		} else {
+			peerManager = MPCManager(delegate: self, selfContact: selfContact)
+			peerManager.advertiser.startAdvertisingPeer()
+			peerManager.browser.startBrowsingForPeers()
+		}
     }
     override func viewDidAppear(animated: Bool) {
         peerManager.delegate = self
