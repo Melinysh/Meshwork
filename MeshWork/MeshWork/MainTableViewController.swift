@@ -63,8 +63,10 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
                 let nv = UINavigationController(rootViewController: vc)
                 self.presentViewController(nv, animated: true, completion: nil)
             }
-            //self.selectedCellLabel.text = navigationItems[indexPath]
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
