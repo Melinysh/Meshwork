@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="md9-H2-oLf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="md9-H2-oLf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -19,44 +19,68 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ctd-xq-LJn" id="54B-hW-w2u">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VHF-8C-pIR">
-                                            <rect key="frame" x="33" y="5" width="70" height="70"/>
+                                            <rect key="frame" x="18" y="5" width="70" height="70"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="R3L-xx-99A"/>
                                                 <constraint firstAttribute="width" constant="70" id="eL9-G0-1Rt"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hms-bR-5Bb">
-                                            <rect key="frame" x="123" y="29.5" width="459" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Contact Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hms-bR-5Bb">
+                                            <rect key="frame" x="108" y="14" width="118" height="21"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-twitter-3-icon-24.png" translatesAutoresizingMaskIntoConstraints="NO" id="uD3-93-PjW">
+                                            <rect key="frame" x="108" y="48" width="24" height="24"/>
+                                        </imageView>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-facebook-3-icon-24.png" translatesAutoresizingMaskIntoConstraints="NO" id="qsq-EO-D5M">
+                                            <rect key="frame" x="142" y="48" width="24" height="24"/>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstItem="uD3-93-PjW" firstAttribute="centerY" secondItem="54B-hW-w2u" secondAttribute="centerY" constant="20" id="4nV-i2-dEu"/>
+                                        <constraint firstItem="hms-bR-5Bb" firstAttribute="centerY" secondItem="54B-hW-w2u" secondAttribute="centerY" constant="-15" id="OIb-Gv-2rX"/>
+                                        <constraint firstItem="uD3-93-PjW" firstAttribute="leading" secondItem="VHF-8C-pIR" secondAttribute="trailing" constant="20" id="Qoy-Vk-GEc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="hms-bR-5Bb" secondAttribute="trailing" constant="10" id="Rl4-E0-7nh"/>
-                                        <constraint firstItem="VHF-8C-pIR" firstAttribute="leading" secondItem="54B-hW-w2u" secondAttribute="leadingMargin" constant="25" id="VFs-y4-Zaq"/>
+                                        <constraint firstItem="VHF-8C-pIR" firstAttribute="leading" secondItem="54B-hW-w2u" secondAttribute="leadingMargin" constant="10" id="VFs-y4-Zaq"/>
+                                        <constraint firstItem="qsq-EO-D5M" firstAttribute="leading" secondItem="uD3-93-PjW" secondAttribute="trailing" constant="10" id="YHN-tz-Q0w"/>
                                         <constraint firstItem="hms-bR-5Bb" firstAttribute="centerY" secondItem="VHF-8C-pIR" secondAttribute="centerY" id="a87-yn-LnB"/>
+                                        <constraint firstItem="qsq-EO-D5M" firstAttribute="centerY" secondItem="54B-hW-w2u" secondAttribute="centerY" constant="20" id="aJ3-Xw-BFg"/>
                                         <constraint firstItem="VHF-8C-pIR" firstAttribute="top" secondItem="54B-hW-w2u" secondAttribute="topMargin" constant="-3" id="eFm-GW-lO5"/>
                                         <constraint firstItem="hms-bR-5Bb" firstAttribute="leading" secondItem="VHF-8C-pIR" secondAttribute="trailing" constant="20" id="iE2-1h-dAn"/>
+                                        <constraint firstItem="VHF-8C-pIR" firstAttribute="centerY" secondItem="54B-hW-w2u" secondAttribute="centerY" id="j3f-qG-rlU"/>
+                                        <constraint firstItem="uD3-93-PjW" firstAttribute="centerX" secondItem="54B-hW-w2u" secondAttribute="centerX" id="oqe-de-sWe"/>
                                         <constraint firstItem="hms-bR-5Bb" firstAttribute="leading" secondItem="54B-hW-w2u" secondAttribute="leadingMargin" constant="124" id="tIW-Wh-HF8"/>
+                                        <constraint firstItem="hms-bR-5Bb" firstAttribute="leading" secondItem="VHF-8C-pIR" secondAttribute="trailing" constant="20" id="xSE-F4-Roo"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="eFm-GW-lO5"/>
+                                            <exclude reference="Rl4-E0-7nh"/>
+                                            <exclude reference="a87-yn-LnB"/>
+                                            <exclude reference="iE2-1h-dAn"/>
                                             <exclude reference="tIW-Wh-HF8"/>
+                                            <exclude reference="oqe-de-sWe"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="facebookImage" destination="qsq-EO-D5M" id="VR3-vD-AxZ"/>
                                     <outlet property="nameLabel" destination="hms-bR-5Bb" id="o87-bF-7OR"/>
                                     <outlet property="photo" destination="VHF-8C-pIR" id="2UQ-Uh-sTc"/>
+                                    <outlet property="twitterImage" destination="uD3-93-PjW" id="rul-9A-79A"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -89,4 +113,8 @@
             <point key="canvasLocation" x="-328" y="1065"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconmonstr-facebook-3-icon-24.png" width="24" height="24"/>
+        <image name="iconmonstr-twitter-3-icon-24.png" width="24" height="24"/>
+    </resources>
 </document>
