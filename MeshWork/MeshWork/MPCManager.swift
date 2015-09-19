@@ -16,7 +16,7 @@ protocol MPCManagerDelegate {
 	func receievedContactFromPeer(peer : MCPeerID, contact : ContactObject)
 }
 
-class MPCManager : NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegate, MCNearbyServiceBrowserDelegate  {
+class MPCManager : NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegate, MCNearbyServiceBrowserDelegate {
   
   var session : MCSession!
   let selfPeer = MCPeerID(displayName: UIDevice.currentDevice().name)
