@@ -47,21 +47,19 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 			peerManager = MPCManager(delegate: self, selfContact: selfContact)
 			peerManager.advertiser.startAdvertisingPeer()
 			peerManager.browser.startBrowsingForPeers()
-			
-			let menuView = BTNavigationDropdownMenu(title: navigationItems.first!, items: navigationItems)
-			self.navigationItem.titleView = menuView
-			
-			menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
-				print("Did select item at index: \(indexPath)")
-				if indexPath == 1 {
-					let vc = StatsViewController()
-					let nv = UINavigationController(rootViewController: vc)
-					self.presentViewController(nv, animated: true, completion: nil)
-				}
-			}
 		}
 		
-		
+        let menuView = BTNavigationDropdownMenu(title: navigationItems.first!, items: navigationItems)
+        self.navigationItem.titleView = menuView
+        
+        menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+            print("Did select item at index: \(indexPath)")
+            if indexPath == 1 {
+                let vc = StatsViewController()
+                let nv = UINavigationController(rootViewController: vc)
+                self.presentViewController(nv, animated: true, completion: nil)
+            }
+        }
     }
 	
     override func viewWillAppear(animated: Bool) {
