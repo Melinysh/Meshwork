@@ -22,6 +22,7 @@
 		DC51FC8B1BAD1FD400E09780 /* stevo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC8A1BAD1FD400E09780 /* stevo.png */; settings = {ASSET_TAGS = (); }; };
 		DCE59DC61BAD7F950076D0C3 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE59DC51BAD7F950076D0C3 /* ContactTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		DCE59DC81BAD8D530076D0C3 /* DetailContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE59DC71BAD8D530076D0C3 /* DetailContactViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DCE59DCA1BADA5A10076D0C3 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE59DC91BADA5A10076D0C3 /* ContactsManager.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		DC51FC8A1BAD1FD400E09780 /* stevo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stevo.png; sourceTree = "<group>"; };
 		DCE59DC51BAD7F950076D0C3 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		DCE59DC71BAD8D530076D0C3 /* DetailContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContactViewController.swift; sourceTree = "<group>"; };
+		DCE59DC91BADA5A10076D0C3 /* ContactsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 		F9048B09E1CB0F25D28690E9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				DC51FC741BAD13F000E09780 /* AppDelegate.swift */,
 				DC51FC861BAD14E400E09780 /* MPCManager.swift */,
 				DC51FC881BAD161500E09780 /* ContactObject.swift */,
+				DCE59DC91BADA5A10076D0C3 /* ContactsManager.swift */,
 				DCE59DC51BAD7F950076D0C3 /* ContactTableViewCell.swift */,
 				DCE59DC71BAD8D530076D0C3 /* DetailContactViewController.swift */,
 				DC51FC8A1BAD1FD400E09780 /* stevo.png */,
@@ -247,6 +250,7 @@
 				DC51FC751BAD13F000E09780 /* AppDelegate.swift in Sources */,
 				DCE59DC81BAD8D530076D0C3 /* DetailContactViewController.swift in Sources */,
 				DC51FC871BAD14E400E09780 /* MPCManager.swift in Sources */,
+				DCE59DCA1BADA5A10076D0C3 /* ContactsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
