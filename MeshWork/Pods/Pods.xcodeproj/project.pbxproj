@@ -7,58 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A6E2A31D322D0C0F99D8298ACD87AD2 /* BTNavigationDropdownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C573E388DB0A87057384F0F202F9985 /* BTNavigationDropdownMenu-dummy.m */; };
-		23347C5BDC49C771708C10ED4D8C3C5C /* BTNavigationDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA076AB4DB3AEF1BE2E99719B4C8E27B /* BTNavigationDropdownMenu.swift */; };
-		603B1C932CF4CA7906264301750426F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CD5E30909A6F105CA18175C43FBD06 /* Foundation.framework */; };
-		61C432DF97DA74C49CAC7516F554F8F7 /* BTNavigationDropdownMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 071EE24E7F55E555D702121042EE746E /* BTNavigationDropdownMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		758B556AC3E8829C594B642667674514 /* BTNavigationDropdownMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4628FB8C3ACADC026E5CDE586F849A02 /* BTNavigationDropdownMenu.bundle */; };
-		AAE89BADFB7E978E30570E41EB430ED0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CD5E30909A6F105CA18175C43FBD06 /* Foundation.framework */; };
+		147EBE786E01653B5BA7F46EFCF04255 /* BTNavigationDropdownMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5FC367F94513E4BFBA733FDF9C6CA05 /* BTNavigationDropdownMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28843B95BA9A12570FBB34E294ACAACF /* BTNavigationDropdownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F128C2573A2D2421EA72D021ED18EEF /* BTNavigationDropdownMenu-dummy.m */; };
+		5E305873B16ACEF4A04590C748CCAAAE /* BTNavigationDropdownMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 130BDD78ACB0C60B4D158236EA189C4E /* BTNavigationDropdownMenu.bundle */; };
+		603B1C932CF4CA7906264301750426F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B16E9A877AB31AFACE03FC2D6C5A6C /* Foundation.framework */; };
+		A2E88F4D0248DE841913EDC866A70D9C /* BTNavigationDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151AF5519DA3EFBEC1B43F7D447E40F7 /* BTNavigationDropdownMenu.swift */; };
+		D169F8555BD418B14F42BF86E2D11612 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B16E9A877AB31AFACE03FC2D6C5A6C /* Foundation.framework */; };
 		DF27F5EDAE130C9198751441BD8D075C /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF4C9ECBE717D24484B969D68824A0 /* Pods-dummy.m */; };
 		EABD3BF3829847A979F7E00046610CC6 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C516F5F7F9911FB5B14DD6CD7ECECB /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4B4459477DEC4A227DBDD507B3D28E91 /* PBXContainerItemProxy */ = {
+		9E552737011BD83C637C483A33FE7DC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 442F938876DF56135599374D689D8F0C;
+			remoteGlobalIDString = E1F6172CE3B3C23632AEFA56EB536979;
 			remoteInfo = BTNavigationDropdownMenu;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05CD5E30909A6F105CA18175C43FBD06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		071EE24E7F55E555D702121042EE746E /* BTNavigationDropdownMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTNavigationDropdownMenu-umbrella.h"; sourceTree = "<group>"; };
+		130BDD78ACB0C60B4D158236EA189C4E /* BTNavigationDropdownMenu.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = BTNavigationDropdownMenu.bundle; path = Source/BTNavigationDropdownMenu.bundle; sourceTree = "<group>"; };
+		151AF5519DA3EFBEC1B43F7D447E40F7 /* BTNavigationDropdownMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BTNavigationDropdownMenu.swift; path = Source/BTNavigationDropdownMenu.swift; sourceTree = "<group>"; };
+		1F128C2573A2D2421EA72D021ED18EEF /* BTNavigationDropdownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BTNavigationDropdownMenu-dummy.m"; sourceTree = "<group>"; };
 		1FEF5755F9F88AE51206D34B945DA6C4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24C516F5F7F9911FB5B14DD6CD7ECECB /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
 		39D08343C26A74996FAEF4ECD5886FBE /* BTNavigationDropdownMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BTNavigationDropdownMenu.modulemap; sourceTree = "<group>"; };
+		422F724371F15897A8BFFBFAAF6F88D4 /* BTNavigationDropdownMenu-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "BTNavigationDropdownMenu-Private.xcconfig"; sourceTree = "<group>"; };
 		433FA4DFD7B776893EB1EDAFB33EEFB0 /* BTNavigationDropdownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTNavigationDropdownMenu-prefix.pch"; sourceTree = "<group>"; };
 		44DCDE2368B35F16251FF58F62C5687E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		4628FB8C3ACADC026E5CDE586F849A02 /* BTNavigationDropdownMenu.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = BTNavigationDropdownMenu.bundle; path = Source/BTNavigationDropdownMenu.bundle; sourceTree = "<group>"; };
-		4C573E388DB0A87057384F0F202F9985 /* BTNavigationDropdownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BTNavigationDropdownMenu-dummy.m"; sourceTree = "<group>"; };
 		6EBF4C9ECBE717D24484B969D68824A0 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
 		7FE9C8FCA6BF57C86F6E40877FCC5180 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		86B16E9A877AB31AFACE03FC2D6C5A6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		8B15912B7B5F374FC9DE80E91E3BEA8B /* BTNavigationDropdownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BTNavigationDropdownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D212C05F6073DE0203793D4898E8860 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC75592DFC7C6478722D97C236042BD4 /* BTNavigationDropdownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BTNavigationDropdownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DA076AB4DB3AEF1BE2E99719B4C8E27B /* BTNavigationDropdownMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BTNavigationDropdownMenu.swift; path = Source/BTNavigationDropdownMenu.swift; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9771F0A36BC70821EE3ADC0041536DD /* BTNavigationDropdownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BTNavigationDropdownMenu.xcconfig; sourceTree = "<group>"; };
-		ED8FF51550F6CAF199C878367F5A13A7 /* BTNavigationDropdownMenu-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "BTNavigationDropdownMenu-Private.xcconfig"; sourceTree = "<group>"; };
+		F5FC367F94513E4BFBA733FDF9C6CA05 /* BTNavigationDropdownMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTNavigationDropdownMenu-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		697243EE7E285B0856C29D8DEEF6D7B5 /* Frameworks */ = {
+		0A2D3A7019FFDF9D1495AE523438AE76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE89BADFB7E978E30570E41EB430ED0 /* Foundation.framework in Frameworks */,
+				D169F8555BD418B14F42BF86E2D11612 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +76,7 @@
 		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				05CD5E30909A6F105CA18175C43FBD06 /* Foundation.framework */,
+				86B16E9A877AB31AFACE03FC2D6C5A6C /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -123,10 +123,10 @@
 			children = (
 				39D08343C26A74996FAEF4ECD5886FBE /* BTNavigationDropdownMenu.modulemap */,
 				E9771F0A36BC70821EE3ADC0041536DD /* BTNavigationDropdownMenu.xcconfig */,
-				ED8FF51550F6CAF199C878367F5A13A7 /* BTNavigationDropdownMenu-Private.xcconfig */,
-				4C573E388DB0A87057384F0F202F9985 /* BTNavigationDropdownMenu-dummy.m */,
+				422F724371F15897A8BFFBFAAF6F88D4 /* BTNavigationDropdownMenu-Private.xcconfig */,
+				1F128C2573A2D2421EA72D021ED18EEF /* BTNavigationDropdownMenu-dummy.m */,
 				433FA4DFD7B776893EB1EDAFB33EEFB0 /* BTNavigationDropdownMenu-prefix.pch */,
-				071EE24E7F55E555D702121042EE746E /* BTNavigationDropdownMenu-umbrella.h */,
+				F5FC367F94513E4BFBA733FDF9C6CA05 /* BTNavigationDropdownMenu-umbrella.h */,
 				1FEF5755F9F88AE51206D34B945DA6C4 /* Info.plist */,
 			);
 			name = "Support Files";
@@ -152,7 +152,7 @@
 		BEF576554D264C84DF63914CCAD5140E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4628FB8C3ACADC026E5CDE586F849A02 /* BTNavigationDropdownMenu.bundle */,
+				130BDD78ACB0C60B4D158236EA189C4E /* BTNavigationDropdownMenu.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC75592DFC7C6478722D97C236042BD4 /* BTNavigationDropdownMenu.framework */,
+				8B15912B7B5F374FC9DE80E91E3BEA8B /* BTNavigationDropdownMenu.framework */,
 				9D212C05F6073DE0203793D4898E8860 /* Pods.framework */,
 			);
 			name = Products;
@@ -169,7 +169,7 @@
 		CD6579980CAAF64B7C6FE2BC2F2C5A7F /* BTNavigationDropdownMenu */ = {
 			isa = PBXGroup;
 			children = (
-				DA076AB4DB3AEF1BE2E99719B4C8E27B /* BTNavigationDropdownMenu.swift */,
+				151AF5519DA3EFBEC1B43F7D447E40F7 /* BTNavigationDropdownMenu.swift */,
 				BEF576554D264C84DF63914CCAD5140E /* Resources */,
 				88514A3AA69AD2947E4745FB11D6F9EC /* Support Files */,
 			);
@@ -179,11 +179,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5070FC04370168DD28B89CC9424747FA /* Headers */ = {
+		A62AAC319FA2E02F3DE6F057B7B2FEE1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61C432DF97DA74C49CAC7516F554F8F7 /* BTNavigationDropdownMenu-umbrella.h in Headers */,
+				147EBE786E01653B5BA7F46EFCF04255 /* BTNavigationDropdownMenu-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,14 +198,14 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		442F938876DF56135599374D689D8F0C /* BTNavigationDropdownMenu */ = {
+		E1F6172CE3B3C23632AEFA56EB536979 /* BTNavigationDropdownMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5F9670119D39B0CF8E15EE30C1B5A91 /* Build configuration list for PBXNativeTarget "BTNavigationDropdownMenu" */;
+			buildConfigurationList = AD5C50168C9BC584BB40F05CD6821653 /* Build configuration list for PBXNativeTarget "BTNavigationDropdownMenu" */;
 			buildPhases = (
-				D2E6560300BC59C75BF752668903CFFF /* Sources */,
-				697243EE7E285B0856C29D8DEEF6D7B5 /* Frameworks */,
-				3FBBFC69D7501F8FA2BD676B0D48E830 /* Resources */,
-				5070FC04370168DD28B89CC9424747FA /* Headers */,
+				6291EE00E683AC5B8187F255DDC758D3 /* Sources */,
+				0A2D3A7019FFDF9D1495AE523438AE76 /* Frameworks */,
+				6FBE430C762797FD3D085BAB25803793 /* Resources */,
+				A62AAC319FA2E02F3DE6F057B7B2FEE1 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -213,7 +213,7 @@
 			);
 			name = BTNavigationDropdownMenu;
 			productName = BTNavigationDropdownMenu;
-			productReference = AC75592DFC7C6478722D97C236042BD4 /* BTNavigationDropdownMenu.framework */;
+			productReference = 8B15912B7B5F374FC9DE80E91E3BEA8B /* BTNavigationDropdownMenu.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F4C9A0D3CDCB3586963E22188922CBBE /* Pods */ = {
@@ -227,7 +227,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0455034860AFCD4510488C8D63EB168C /* PBXTargetDependency */,
+				C7AC95335AB4D994C0B60E06D0C6C0D6 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
@@ -255,18 +255,18 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				442F938876DF56135599374D689D8F0C /* BTNavigationDropdownMenu */,
+				E1F6172CE3B3C23632AEFA56EB536979 /* BTNavigationDropdownMenu */,
 				F4C9A0D3CDCB3586963E22188922CBBE /* Pods */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3FBBFC69D7501F8FA2BD676B0D48E830 /* Resources */ = {
+		6FBE430C762797FD3D085BAB25803793 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				758B556AC3E8829C594B642667674514 /* BTNavigationDropdownMenu.bundle in Resources */,
+				5E305873B16ACEF4A04590C748CCAAAE /* BTNavigationDropdownMenu.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,55 +281,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2E6560300BC59C75BF752668903CFFF /* Sources */ = {
+		6291EE00E683AC5B8187F255DDC758D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A6E2A31D322D0C0F99D8298ACD87AD2 /* BTNavigationDropdownMenu-dummy.m in Sources */,
-				23347C5BDC49C771708C10ED4D8C3C5C /* BTNavigationDropdownMenu.swift in Sources */,
+				28843B95BA9A12570FBB34E294ACAACF /* BTNavigationDropdownMenu-dummy.m in Sources */,
+				A2E88F4D0248DE841913EDC866A70D9C /* BTNavigationDropdownMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0455034860AFCD4510488C8D63EB168C /* PBXTargetDependency */ = {
+		C7AC95335AB4D994C0B60E06D0C6C0D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BTNavigationDropdownMenu;
-			target = 442F938876DF56135599374D689D8F0C /* BTNavigationDropdownMenu */;
-			targetProxy = 4B4459477DEC4A227DBDD507B3D28E91 /* PBXContainerItemProxy */;
+			target = E1F6172CE3B3C23632AEFA56EB536979 /* BTNavigationDropdownMenu */;
+			targetProxy = 9E552737011BD83C637C483A33FE7DC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		29ACCEFD08E1B10B04BFC4821649FF93 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED8FF51550F6CAF199C878367F5A13A7 /* BTNavigationDropdownMenu-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.8;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.1.8;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/BTNavigationDropdownMenu/BTNavigationDropdownMenu-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BTNavigationDropdownMenu/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BTNavigationDropdownMenu/BTNavigationDropdownMenu.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = BTNavigationDropdownMenu;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		569382AF5AF0ECB33722A060B00B4537 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7FE9C8FCA6BF57C86F6E40877FCC5180 /* Pods.release.xcconfig */;
@@ -432,6 +404,34 @@
 			};
 			name = Release;
 		};
+		75E8674A06CEA9B7B0A2968723B3B4A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 422F724371F15897A8BFFBFAAF6F88D4 /* BTNavigationDropdownMenu-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.8;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.8;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BTNavigationDropdownMenu/BTNavigationDropdownMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BTNavigationDropdownMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BTNavigationDropdownMenu/BTNavigationDropdownMenu.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = BTNavigationDropdownMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		9BDD5B9B32386F7672A4868D34C16E62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44DCDE2368B35F16251FF58F62C5687E /* Pods.debug.xcconfig */;
@@ -462,9 +462,9 @@
 			};
 			name = Debug;
 		};
-		FFB1DF688EC55B6E421FC3728F9E57FB /* Release */ = {
+		EE0651D1683D36768408D3584F991D75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED8FF51550F6CAF199C878367F5A13A7 /* BTNavigationDropdownMenu-Private.xcconfig */;
+			baseConfigurationReference = 422F724371F15897A8BFFBFAAF6F88D4 /* BTNavigationDropdownMenu-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0.1.8;
@@ -510,11 +510,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5F9670119D39B0CF8E15EE30C1B5A91 /* Build configuration list for PBXNativeTarget "BTNavigationDropdownMenu" */ = {
+		AD5C50168C9BC584BB40F05CD6821653 /* Build configuration list for PBXNativeTarget "BTNavigationDropdownMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29ACCEFD08E1B10B04BFC4821649FF93 /* Debug */,
-				FFB1DF688EC55B6E421FC3728F9E57FB /* Release */,
+				75E8674A06CEA9B7B0A2968723B3B4A4 /* Debug */,
+				EE0651D1683D36768408D3584F991D75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
