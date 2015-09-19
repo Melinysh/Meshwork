@@ -302,7 +302,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="4bV-wD-6iS" id="67c-QH-aT9"/>
                         <outlet property="doneButton" destination="QsU-4X-yoQ" id="0N9-EU-nGI"/>
+                        <outlet property="takePhotoButton" destination="HFc-rY-FHq" id="eOi-lQ-sy3"/>
                         <outlet property="userPhoto" destination="FFr-Yt-80X" id="z4F-Zj-xLT"/>
                     </connections>
                 </viewController>

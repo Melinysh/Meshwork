@@ -25,9 +25,11 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
 	var beaneathVC : MainTableViewController! = MainTableViewController()
 	
 	
+	@IBOutlet weak var takePhotoButton: UIButton!
 	@IBOutlet weak var userPhoto: UIImageView!
 	@IBOutlet weak var doneButton: UIButton!
 	
+	@IBOutlet weak var cameraButton: UIButton!
 	let photoPicker = UIImagePickerController()
 	let cameraPicker = UIImagePickerController()
 	
@@ -37,9 +39,14 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
 		photoPicker.allowsEditing = true
 		photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
 		
-		cameraPicker.delegate = self
-		cameraPicker.allowsEditing = true
-		cameraPicker.sourceType = UIImagePickerControllerSourceType.Camera
+		if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front) {
+			cameraPicker.delegate = self
+			cameraPicker.allowsEditing = true
+			cameraPicker.sourceType = UIImagePickerControllerSourceType.Camera
+		} else {
+			cameraButton.hidden = true
+		}
+		
         // Do any additional setup after loading the view.
     }
 
