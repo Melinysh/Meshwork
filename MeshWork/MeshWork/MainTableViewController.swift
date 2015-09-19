@@ -57,20 +57,24 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
             }
         }
         
-//		
-//        let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
-//        inputForm.beaneathVC = self
-//        presentViewController(inputForm, animated: true, completion: nil)
+		
+        let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+        inputForm.beaneathVC = self
+        presentViewController(inputForm, animated: true, completion: nil)
         
-		if selfContact == nil {
-			let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
-			inputForm.beaneathVC = self 
-			presentViewController(inputForm, animated: true, completion: nil)
-		} else {
-			peerManager = MPCManager(delegate: self, selfContact: selfContact)
-			peerManager.advertiser.startAdvertisingPeer()
-			peerManager.browser.startBrowsingForPeers()
-		}
+//		if selfContact == nil {
+//			let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+//			inputForm.beaneathVC = self 
+//			presentViewController(inputForm, animated: true, completion: nil)
+//		} else {
+//			peerManager = MPCManager(delegate: self, selfContact: selfContact)
+//			peerManager.advertiser.startAdvertisingPeer()
+//			peerManager.browser.startBrowsingForPeers()
+//		}
+        
+        peerManager = MPCManager(delegate: self, selfContact: selfContact)
+        peerManager.advertiser.startAdvertisingPeer()
+        peerManager.browser.startBrowsingForPeers()
     }
     override func viewDidAppear(animated: Bool) {
         peerManager.delegate = self
