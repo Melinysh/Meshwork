@@ -13,6 +13,8 @@ import BTNavigationDropdownMenu
 
 class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
+    let navigationItems = ["Near Me", "Stats"]
+    
 	var c : ContactObject = {
 		let contact = ContactObject()
 		contact.name = "Sam Haves"
@@ -50,6 +52,19 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 		peerManager = MPCManager(delegate: self, selfContact: UIDevice().name == "iPhone" ? c : c2) //changed to make testing easier
 		peerManager.advertiser.startAdvertisingPeer()
 		peerManager.browser.startBrowsingForPeers()
+        
+        let menuView = BTNavigationDropdownMenu(title: navigationItems.first!, items: navigationItems)
+        self.navigationItem.titleView = menuView
+        
+        menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+            print("Did select item at index: \(indexPath)")
+            if indexPath == 1 {
+                let vc = StatsViewController()
+                let nv = UINavigationController(rootViewController: vc)
+                self.presentViewController(nv, animated: true, completion: nil)
+            }
+            //self.selectedCellLabel.text = navigationItems[indexPath]
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -65,7 +80,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedPeers.count 
+        return sortedPeers.count
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
