@@ -22,7 +22,7 @@ protocol MPCManagerDelegate {
   var lastRequest : NSURLRequest! { get set }
 }
 
-class MPCManager : NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegate, MCNearbyServiceBrowserDelegate,  {
+class MPCManager : NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegate, MCNearbyServiceBrowserDelegate {
   
   var session : MCSession!
   let peer = MCPeerID(displayName: UIDevice.currentDevice().name)
