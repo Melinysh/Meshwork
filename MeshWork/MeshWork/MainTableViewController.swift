@@ -17,8 +17,10 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+
+        let contact: ContactObject = ContactObject(photo: nil, name: "test")
         
-        cell.textLabel?.text = "Wow"
+        cell.textLabel?.text = contact.name
         
         return cell
     }
@@ -29,5 +31,9 @@ class MainTableViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

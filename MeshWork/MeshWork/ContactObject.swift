@@ -17,7 +17,7 @@ class ContactObject: NSObject, NSCoding {
   var twitter : String?
   var facebook : Int?
   var github : String?
-  var linkedin : Int
+  var linkedin : Int?
   
   required init?(coder aDecoder: NSCoder) {
     photo = aDecoder.decodeObjectForKey("photo") as? UIImage
@@ -31,6 +31,12 @@ class ContactObject: NSObject, NSCoding {
   }
   
   
+    init(photo: UIImage?, name: String!) {
+        super.init()
+        self.photo = photo
+        self.name = name
+    }
+    
   func encodeWithCoder(aCoder: NSCoder) {
     aCoder.encodeObject(photo, forKey: "photo")
     aCoder.encodeObject(name, forKey: "name")
