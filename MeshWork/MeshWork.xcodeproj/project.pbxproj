@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A5B4DA9C1BAD16900070BFB5 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4DA9B1BAD16900070BFB5 /* MainTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A5B4DAA01BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B4DA9F1BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png */; settings = {ASSET_TAGS = (); }; };
+		A5B4DAA21BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B4DAA11BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png */; settings = {ASSET_TAGS = (); }; };
 		DC51FC751BAD13F000E09780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC51FC741BAD13F000E09780 /* AppDelegate.swift */; };
 		DC51FC7A1BAD13F000E09780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC781BAD13F000E09780 /* Main.storyboard */; };
 		DC51FC7C1BAD13F000E09780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC7B1BAD13F000E09780 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		A5B4DA9B1BAD16900070BFB5 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		A5B4DA9F1BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-twitter-3-icon-24.png"; sourceTree = "<group>"; };
+		A5B4DAA11BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-facebook-3-icon-24.png"; sourceTree = "<group>"; };
 		DC51FC711BAD13F000E09780 /* MeshWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeshWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC51FC741BAD13F000E09780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC51FC791BAD13F000E09780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 				DC51FC781BAD13F000E09780 /* Main.storyboard */,
 				A5B4DA9B1BAD16900070BFB5 /* MainTableViewController.swift */,
 				DC51FC7B1BAD13F000E09780 /* Assets.xcassets */,
+				A5B4DA9F1BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png */,
+				A5B4DAA11BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png */,
 				DC51FC7D1BAD13F000E09780 /* LaunchScreen.storyboard */,
 				DC51FC801BAD13F000E09780 /* Info.plist */,
 			);
@@ -137,8 +143,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC51FC7F1BAD13F000E09780 /* LaunchScreen.storyboard in Resources */,
+				A5B4DAA01BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png in Resources */,
 				DC51FC8B1BAD1FD400E09780 /* stevo.png in Resources */,
 				DC51FC7C1BAD13F000E09780 /* Assets.xcassets in Resources */,
+				A5B4DAA21BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png in Resources */,
 				DC51FC7A1BAD13F000E09780 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
