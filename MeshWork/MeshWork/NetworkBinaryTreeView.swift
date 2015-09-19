@@ -9,13 +9,8 @@
 import UIKit
 
 protocol NetworkBinaryTreeDataSource: class {
-<<<<<<< HEAD
-    func contacts(sender: NetworkBinaryTreeView) -> [String]?
-    func peers(sender: NetworkBinaryTreeView) -> Int?
-=======
     func contacts(sender: NetworkBinaryTreeView) -> [ContactObject]
     func peers(sender: NetworkBinaryTreeView) -> [ContactObject]
->>>>>>> 2686b918bffd35021e1e5e73d87a861bdea6eec8
 }
 
 extension Double {
@@ -37,20 +32,10 @@ class NetworkBinaryTreeView: UIView {
     var numberOfContactsDrawn: Int = 0
 	
 	var startPoint : CGPoint? = nil
-    
-<<<<<<< HEAD
-    var viewCenter: CGPoint{
-        return convertPoint(center, fromView: superview)
-    }
+	
     
     weak var dataSource: NetworkBinaryTreeDataSource!
-=======
-//    var viewCenter: CGPoint{
-//        return convertPoint(center, fromView: superview)
-//    }
-	
-    weak var dataSource: NetworkBinaryTreeDataSource?
->>>>>>> 2686b918bffd35021e1e5e73d87a861bdea6eec8
+
     
     //TODO:  ask about not having contacts default
 	

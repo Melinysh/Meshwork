@@ -191,7 +191,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
             endingLineNumber = "176"
-            landmarkName = "drawRect(_:)"
+            landmarkName = "drawBinaryTree(_:startPoint:iter:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -223,7 +223,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
-            landmarkName = "pan(_:)"
+            landmarkName = "scale(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
