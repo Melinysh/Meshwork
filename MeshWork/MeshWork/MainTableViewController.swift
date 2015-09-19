@@ -53,8 +53,10 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ContactTableViewCell
 
         let contact: ContactObject = ContactObject(photo: UIImage(named: "stevo.png"), name: "Stevo 'The Steve' Steve")//sortedPeers[indexPath.row]
-        //contact.twitter = "Bless"
+        contact.twitter = "Bless"
         contact.facebook = "Jonathan Galperin"
+        contact.linkedin = "sweg"
+        contact.github = "yey"
         cell.contact = contact
         cell.nameLabel?.text = contact.name
 		cell.photo.image = contact.photo
