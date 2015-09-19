@@ -52,9 +52,9 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ContactTableViewCell
 
-        let contact: ContactObject = ContactObject(photo: UIImage(named: "stevo.png"), name: "Stevo 'The Steve' Steve")//sortedPeers[indexPath.row]
+        let contact: ContactObject = sortedPeers[indexPath.row]
         //contact.twitter = "Bless"
-        contact.facebook = "Jonathan Galperin"
+		// contact.facebook = "Jonathan Galperin"
         cell.contact = contact
         cell.nameLabel?.text = contact.name
 		if let photoData = contact.photo {
@@ -64,7 +64,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedPeers.count + 1
+        return sortedPeers.count 
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -73,6 +73,12 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		
+		let contact = sortedPeers[indexPath.row]
+		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("detailVC") as! DetailContactViewController
+		detailVC.contact = contact
+		self.navigationController?.pushViewController(detailVC, animated: true)
+		
     }
 	
 	//MARK: - MPCManagerDelegate
