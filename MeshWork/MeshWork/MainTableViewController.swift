@@ -70,7 +70,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ContactTableViewCell
 
-        let contact: ContactObject = c2//sortedPeers[indexPath.row]
+        let contact: ContactObject = sortedPeers[indexPath.row]
         cell.contact = contact
         cell.nameLabel?.text = contact.name
 		if let photoData = contact.photo {
@@ -80,7 +80,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedPeers.count + 1
+        return sortedPeers.count
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
