@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Contacts
 
 class DetailContactViewController: UIViewController {
 
@@ -17,6 +16,7 @@ class DetailContactViewController: UIViewController {
 	@IBOutlet weak var phoneLabel: UILabel!
 	
 	var contact : ContactObject!
+	let manager = ContactsManager()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,39 +35,7 @@ class DetailContactViewController: UIViewController {
     }
 	
 	@IBAction func addToContacts(sender: AnyObject) {
-		
-		let store = CNContactStore()
-		let newContact = CNMutableContact()
-		newContact.imageData = contact.photo
-		newContact.givenName = contact.name.componentsSeparatedByString(" ").first!
-		newContact.familyName = contact.name.componentsSeparatedByString(" ").last!
-		if let phoneNumber = contact.phoneNumber {
-			newContact.phoneNumbers = [CNLabeledValue(label: CNLabelPhoneNumberMain, value: CNPhoneNumber(stringValue: phoneNumber))]
-		}
-		if let emailAddr = contact.email {
-			newContact.emailAddresses = [CNLabeledValue(label: CNLabelEmailiCloud, value: emailAddr)]
-		}
-		
-		var socialProfiles = [CNLabeledValue]()
-		if let twitter = contact.twitter {
-			socialProfiles.append( CNLabeledValue(label: CNSocialProfileServiceTwitter, value: CNSocialProfile(urlString: "http://twitter.com", username: twitter, userIdentifier: nil, service: "Twitter")))
-		}
-		if let facebook = contact.facebook {
-			socialProfiles.append( CNLabeledValue(label: CNSocialProfileServiceFacebook, value: CNSocialProfile(urlString: "http://facebook.com", username: nil, userIdentifier: facebook, service: "Facebook")))
-		}
-		if let github = contact.github {
-			socialProfiles.append( CNLabeledValue(label: CNSocialProfileServiceKey, value: CNSocialProfile(urlString: "http://github.com", username: github, userIdentifier: nil, service: "GitHub")))
-		}
-		newContact.socialProfiles = socialProfiles
-		
-		let saveReq = CNSaveRequest()
-		saveReq.addContact(newContact, toContainerWithIdentifier: nil)
-		do {
-			try store.executeSaveRequest(saveReq)
-		} catch {
-			print("There was an error adding the new contact \(error)")
-		}
-		
+		manager.addContact(contact)
 	}
     
 
