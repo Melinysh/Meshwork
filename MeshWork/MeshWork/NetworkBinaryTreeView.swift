@@ -32,12 +32,10 @@ class NetworkBinaryTreeView: UIView {
     var numberOfContactsDrawn: Int = 0
 	
 	var startPoint : CGPoint? = nil
-    
-//    var viewCenter: CGPoint{
-//        return convertPoint(center, fromView: superview)
-//    }
 	
-    weak var dataSource: NetworkBinaryTreeDataSource?
+    
+    weak var dataSource: NetworkBinaryTreeDataSource!
+
     
     //TODO:  ask about not having contacts default
 	

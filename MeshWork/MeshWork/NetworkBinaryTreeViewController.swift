@@ -61,7 +61,7 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
     }
     
     func contacts(sender: NetworkBinaryTreeView) -> [ContactObject] {
-        return  Array(deviceContacts)
+        return Array(deviceContacts)
     }
     
     func peers(sender: NetworkBinaryTreeView) -> [ContactObject] {
