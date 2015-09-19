@@ -19,11 +19,19 @@ extension Double {
         }
     }
 
+class ContactImageNode : UIImageView {
+	var contact : ContactObject!
+}
+
+
+
 @IBDesignable
 class NetworkBinaryTreeView: UIView {
     
     var allLines = [UIBezierPath]()
 	var allNodes = [UIBezierPath]()
+	
+	var controller : NetworkBinaryTreeViewController!
     
     @IBInspectable
     var scale:CGFloat = 10{didSet{setNeedsDisplay()}}
@@ -32,6 +40,7 @@ class NetworkBinaryTreeView: UIView {
     var numberOfContactsDrawn: Int = 0
 	
 	var startPoint : CGPoint? = nil
+	
 	
     
     weak var dataSource: NetworkBinaryTreeDataSource!
@@ -58,7 +67,7 @@ class NetworkBinaryTreeView: UIView {
 
 	
     private struct Constants {
-        static let nodeRadius: CGFloat = 4
+        static let nodeRadius: CGFloat = 20
     }
     
     func scale(gesture: UIPinchGestureRecognizer){
@@ -97,14 +106,49 @@ class NetworkBinaryTreeView: UIView {
         
         return path
     }
-    
+	
+	var contactsPulled = 0
+	var peersPulled = 0
     private func drawNode(endPoint: CGPoint) -> UIBezierPath {
         let path = UIBezierPath(arcCenter: endPoint, radius: Constants.nodeRadius , startAngle: 0, endAngle: CGFloat(2*M_PI), clockwise: true)
         path.lineWidth = strokeWidth
-        
+		
+		// stephen can't believe this works, yet understands how shitty it really is
+		
+		let contact : ContactObject!
+		if contactsPulled != contacts.count {
+			contact = contacts[contactsPulled]
+			contactsPulled++
+		} else {
+			contact = peers[peersPulled]
+			peersPulled++
+		}
+		
+		
+		if let photoData = contact.photo {
+			let imageView = ContactImageNode(image: UIImage(data: photoData)!)
+			imageView.layer.cornerRadius = Constants.nodeRadius
+			imageView.frame = CGRectMake(CGPathGetPathBoundingBox(path.CGPath).origin.x + 2, CGPathGetPathBoundingBox(path.CGPath).origin.y + 2 , Constants.nodeRadius * 2 - 4 , Constants.nodeRadius * 2 - 4)
+			imageView.addGestureRecognizer(UITapGestureRecognizer(target: self.controller, action: "didTapNode:"))
+			imageView.contact = contact
+			imageView.userInteractionEnabled = true
+			
+			self.addSubview(imageView)
+		} else {
+			let imageView = ContactImageNode(image: UIImage(named: "placeholder.jpeg")!)
+			imageView.layer.cornerRadius = Constants.nodeRadius
+			imageView.frame = CGRectMake(CGPathGetPathBoundingBox(path.CGPath).origin.x + 2, CGPathGetPathBoundingBox(path.CGPath).origin.y + 2, Constants.nodeRadius * 2 - 4, Constants.nodeRadius * 2 - 4)
+			imageView.addGestureRecognizer(UITapGestureRecognizer(target: self.controller, action: "didTapNode:"))
+			imageView.contact = contact
+			imageView.userInteractionEnabled = true
+
+			self.addSubview(imageView)
+		}
         return path
     }
-    
+	
+	
+	
     private func getColor() -> UIColor{
         var color:UIColor
         if(known){
@@ -166,6 +210,10 @@ class NetworkBinaryTreeView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
+		// Clean up first then redraw
+		contactsPulled = 0
+		peersPulled = 0
+		subviews.forEach { $0.removeFromSuperview() }
 		allNodes.forEach { $0.removeAllPoints() }
 		allLines.forEach { $0.removeAllPoints() }
 		allLines = []

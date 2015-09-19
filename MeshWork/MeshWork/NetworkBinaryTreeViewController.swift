@@ -32,10 +32,22 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
         didSet{
             treeView.dataSource = self
 			treeView.frame = view.frame
+			treeView.controller = self
 			self.view = treeView
         }
     }
-    
+	
+	func didTapNode(sender : UITapGestureRecognizer) {
+		guard let node = sender.view as? ContactImageNode else {
+			print("What did I just tap on? Error.")
+			return
+		}
+		let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("detailVC") as! DetailContactViewController
+		detailVC.contact = node.contact
+		self.navigationController?.pushViewController(detailVC, animated: true)
+		
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         manager.delegate = self
