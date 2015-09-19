@@ -57,8 +57,8 @@ class NetworkBinaryTreeView: UIView {
 	
 	convenience init (contacts : [ContactObject], peers : [ContactObject]) {
 		self.init()
-		self.peers = [c1,c2,c3] // TODO: Change to params
-		self.contacts = [c4]
+		self.peers = peers // [c1,c2,c3] for testing only
+		self.contacts = contacts
 		self.backgroundColor = UIColor.whiteColor()
 		self.clearsContextBeforeDrawing = true
 		self.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: "scale:"))

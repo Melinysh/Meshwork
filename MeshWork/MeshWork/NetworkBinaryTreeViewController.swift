@@ -10,8 +10,9 @@ import UIKit
 import MultipeerConnectivity
 
 class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSource, MPCManagerDelegate {
-    
-    var manager : MPCManager! // must be set by another VC before transition
+    // must be set by another VC before transition
+    var manager : MPCManager!
+	
     let contactManager = ContactsManager()
     var peers = [MCPeerID : ContactObject]() {
         didSet {
@@ -51,7 +52,7 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         manager.delegate = self
-		treeView = NetworkBinaryTreeView(contacts: [ContactObject](), peers: [ContactObject]())
+		treeView = NetworkBinaryTreeView(contacts: Array(deviceContacts) , peers: Array(sortedPeers))
         // Do any additional setup after loading the view.
     }
     

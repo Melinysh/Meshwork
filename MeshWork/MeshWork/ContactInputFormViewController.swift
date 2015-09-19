@@ -22,12 +22,7 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
     let facebookField = UITextField()
     let githubField = UITextField()
     
-	let firstName = ContactInputField()
-	let lastName = ContactInputField()
-	let email = ContactInputField()
-	let phoneNumber = ContactInputField()
-	let twitterHandle = ContactInputField()
-	let githubHanlde = ContactInputField()
+
 	
     
     var fieldsList = [UIView]()
@@ -81,15 +76,16 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
 	
 	@IBAction func doneInputForm(sender: AnyObject) {
 		let contact = ContactObject()
-		contact.name = firstName.text! + " " + lastName.text!
-		contact.email = email.text
-		contact.phoneNumber = phoneNumber.text
-		contact.twitter = twitterHandle.text
-		contact.github = githubHanlde.text
+		contact.name =  nameField.text
+		contact.email = emailField.text
+		contact.phoneNumber = phoneField.text
+		contact.twitter = twitterField.text
+		contact.github = githubField.text
 		if let photo = userPhoto.image {
 			contact.photo = UIImagePNGRepresentation(photo)
-		}
+		} 
 		beaneathVC.selfContact = contact
+		
 		dismissViewControllerAnimated(true, completion: nil)
 	
 	}
