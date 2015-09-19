@@ -1,5 +1,5 @@
 //
-//  DetailContactViewController.swift
+//  ContactInputFormViewController.swift
 //  MeshWork
 //
 //  Created by Stephen Melinyshyn on 2015-09-19.
@@ -8,25 +8,27 @@
 
 import UIKit
 
-class DetailContactViewController: UIViewController {
+class ContactInputField: UITextField {
+	var associatedLine: UIView?
+	var placeholderText: String?
+}
 
-	@IBOutlet weak var imageView: UIImageView!
-	@IBOutlet weak var nameLabel: UILabel!
-	@IBOutlet weak var emailLabel: UILabel!
-	@IBOutlet weak var phoneLabel: UILabel!
+class ContactInputFormViewController: UIViewController, UIImagePickerControllerDelegate {
+
+	let firstName = ContactInputField()
+	let lastName = ContactInputField()
+	let email = ContactInputField()
+	let phoneNumber = ContactInputField()
+	let twitterHandle = ContactInputField()
+	let githubHanlde = ContactInputField()
 	
-	var contact : ContactObject!
-	let manager = ContactsManager()
+	let photoPicker = UIImagePickerController()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		if let pData = contact.photo {
-			imageView.image = UIImage(data: pData)
-			imageView.layer.cornerRadius = 5
-		}
-		nameLabel.text = contact.name
-		emailLabel.text = contact.email
-		phoneLabel.text = contact.phoneNumber
+		photoPicker.delegate = self
+		photoPicker.allowsEditing = false
+		
         // Do any additional setup after loading the view.
     }
 
@@ -34,12 +36,15 @@ class DetailContactViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
-	@IBAction func addToContacts(sender: AnyObject) {
-		manager.addContact(contact)
-	}
     
-
+ func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+	
+	}
+	
+	func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+		
+	}
+	
     /*
     // MARK: - Navigation
 
