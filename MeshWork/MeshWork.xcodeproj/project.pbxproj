@@ -8,27 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		16D9992527A052977DBC3462 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0604641F6207EDAC5EF6279A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A531A9411BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A531A93F1BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png */; settings = {ASSET_TAGS = (); }; };
-		A531A9441BAD9A7B007A4D98 /* iconmonstr-github-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A531A9431BAD9A7B007A4D98 /* iconmonstr-github-3-icon-24.png */; settings = {ASSET_TAGS = (); }; };
-		A5B4DA9C1BAD16900070BFB5 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4DA9B1BAD16900070BFB5 /* MainTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A5B4DAA01BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B4DA9F1BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png */; settings = {ASSET_TAGS = (); }; };
-		A5B4DAA21BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B4DAA11BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png */; settings = {ASSET_TAGS = (); }; };
-		A5DFAF321BAD9FF100FF1BF0 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFAF311BAD9FF100FF1BF0 /* StatsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1AE72CEE1BADE0FB006F5F8E /* NetworkBinaryTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE72CEC1BADE0FB006F5F8E /* NetworkBinaryTreeView.swift */; };
+		1AE72CEF1BADE0FB006F5F8E /* NetworkBinaryTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE72CED1BADE0FB006F5F8E /* NetworkBinaryTreeViewController.swift */; };
+		A531A9411BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A531A93F1BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png */; };
+		A531A9441BAD9A7B007A4D98 /* iconmonstr-github-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A531A9431BAD9A7B007A4D98 /* iconmonstr-github-3-icon-24.png */; };
+		A5B4DA9C1BAD16900070BFB5 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4DA9B1BAD16900070BFB5 /* MainTableViewController.swift */; };
+		A5B4DAA01BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B4DA9F1BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png */; };
+		A5B4DAA21BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B4DAA11BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png */; };
+		A5DFAF321BAD9FF100FF1BF0 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DFAF311BAD9FF100FF1BF0 /* StatsViewController.swift */; };
 		DC51FC751BAD13F000E09780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC51FC741BAD13F000E09780 /* AppDelegate.swift */; };
 		DC51FC7A1BAD13F000E09780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC781BAD13F000E09780 /* Main.storyboard */; };
 		DC51FC7C1BAD13F000E09780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC7B1BAD13F000E09780 /* Assets.xcassets */; };
 		DC51FC7F1BAD13F000E09780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC7D1BAD13F000E09780 /* LaunchScreen.storyboard */; };
-		DC51FC871BAD14E400E09780 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC51FC861BAD14E400E09780 /* MPCManager.swift */; settings = {ASSET_TAGS = (); }; };
-		DC51FC891BAD161500E09780 /* ContactObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC51FC881BAD161500E09780 /* ContactObject.swift */; settings = {ASSET_TAGS = (); }; };
-		DC51FC8B1BAD1FD400E09780 /* stevo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC8A1BAD1FD400E09780 /* stevo.png */; settings = {ASSET_TAGS = (); }; };
-		DCC8B95D1BADB42600158218 /* ContactInputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8B95C1BADB42600158218 /* ContactInputFormViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		DCE59DC61BAD7F950076D0C3 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE59DC51BAD7F950076D0C3 /* ContactTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		DCE59DC81BAD8D530076D0C3 /* DetailContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE59DC71BAD8D530076D0C3 /* DetailContactViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		DCE59DCA1BADA5A10076D0C3 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE59DC91BADA5A10076D0C3 /* ContactsManager.swift */; settings = {ASSET_TAGS = (); }; };
+		DC51FC871BAD14E400E09780 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC51FC861BAD14E400E09780 /* MPCManager.swift */; };
+		DC51FC891BAD161500E09780 /* ContactObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC51FC881BAD161500E09780 /* ContactObject.swift */; };
+		DC51FC8B1BAD1FD400E09780 /* stevo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC8A1BAD1FD400E09780 /* stevo.png */; };
+		DCC8B95D1BADB42600158218 /* ContactInputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8B95C1BADB42600158218 /* ContactInputFormViewController.swift */; };
+		DCE59DC61BAD7F950076D0C3 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE59DC51BAD7F950076D0C3 /* ContactTableViewCell.swift */; };
+		DCE59DC81BAD8D530076D0C3 /* DetailContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE59DC71BAD8D530076D0C3 /* DetailContactViewController.swift */; };
+		DCE59DCA1BADA5A10076D0C3 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE59DC91BADA5A10076D0C3 /* ContactsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0604641F6207EDAC5EF6279A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE72CEC1BADE0FB006F5F8E /* NetworkBinaryTreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkBinaryTreeView.swift; sourceTree = "<group>"; };
+		1AE72CED1BADE0FB006F5F8E /* NetworkBinaryTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkBinaryTreeViewController.swift; sourceTree = "<group>"; };
 		4D230C0B3E5EF829D2C8B6A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A531A93F1BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-linkedin-3-icon-24.png"; sourceTree = "<group>"; };
 		A531A9431BAD9A7B007A4D98 /* iconmonstr-github-3-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-github-3-icon-24.png"; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				A5DFAF311BAD9FF100FF1BF0 /* StatsViewController.swift */,
+				1AE72CEC1BADE0FB006F5F8E /* NetworkBinaryTreeView.swift */,
+				1AE72CED1BADE0FB006F5F8E /* NetworkBinaryTreeViewController.swift */,
 				DC51FC741BAD13F000E09780 /* AppDelegate.swift */,
 				DC51FC861BAD14E400E09780 /* MPCManager.swift */,
 				DC51FC881BAD161500E09780 /* ContactObject.swift */,
@@ -252,6 +258,8 @@
 			files = (
 				DC51FC891BAD161500E09780 /* ContactObject.swift in Sources */,
 				DCE59DC61BAD7F950076D0C3 /* ContactTableViewCell.swift in Sources */,
+				1AE72CEE1BADE0FB006F5F8E /* NetworkBinaryTreeView.swift in Sources */,
+				1AE72CEF1BADE0FB006F5F8E /* NetworkBinaryTreeViewController.swift in Sources */,
 				A5B4DA9C1BAD16900070BFB5 /* MainTableViewController.swift in Sources */,
 				DC51FC751BAD13F000E09780 /* AppDelegate.swift in Sources */,
 				A5DFAF321BAD9FF100FF1BF0 /* StatsViewController.swift in Sources */,

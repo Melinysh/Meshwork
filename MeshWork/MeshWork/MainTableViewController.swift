@@ -63,6 +63,9 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 		
 		
     }
+    override func viewDidAppear(animated: Bool) {
+        peerManager.delegate = self
+    }
 	
     override func viewWillAppear(animated: Bool) {
     }
