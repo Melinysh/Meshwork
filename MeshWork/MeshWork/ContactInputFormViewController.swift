@@ -47,7 +47,6 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
 			cameraButton.hidden = true
 		}
 		
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
