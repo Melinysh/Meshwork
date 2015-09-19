@@ -35,6 +35,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 		let treeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("treeVC") as! NetworkBinaryTreeViewController
 		treeVC.manager = peerManager
 		treeVC.peers = peers
+		navigationController?.pushViewController(treeVC, animated: true)
 	}
 	
 	override func viewDidLoad() {
@@ -57,7 +58,6 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
             }
         }
         
-		
         let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
         inputForm.beaneathVC = self
         presentViewController(inputForm, animated: true, completion: nil)
@@ -75,12 +75,32 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
         peerManager = MPCManager(delegate: self, selfContact: selfContact)
         peerManager.advertiser.startAdvertisingPeer()
         peerManager.browser.startBrowsingForPeers()
+//
+//        let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+//        inputForm.beaneathVC = self
+//        presentViewController(inputForm, animated: true, completion: nil)
+
+		if selfContact == nil {
+			let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+			inputForm.beaneathVC = self 
+			presentViewController(inputForm, animated: true, completion: nil)
+		} else {
+			peerManager = MPCManager(delegate: self, selfContact: selfContact)
+			peerManager.advertiser.startAdvertisingPeer()
+			peerManager.browser.startBrowsingForPeers()
+		}
     }
     override func viewDidAppear(animated: Bool) {
-        peerManager.delegate = self
+		if selfContact != nil {
+			if peerManager == nil {
+				peerManager = MPCManager(delegate: self, selfContact: selfContact)
+			}
+			peerManager.delegate = self
+		}
     }
 	
     override func viewWillAppear(animated: Bool) {
+    
     }
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

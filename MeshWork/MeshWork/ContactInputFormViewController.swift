@@ -15,6 +15,13 @@ class ContactInputField: UITextField {
 
 class ContactInputFormViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+    let nameField = UITextField()
+    let emailField = UITextField()
+    let phoneField = UITextField()
+    let twitterField = UITextField()
+    let facebookField = UITextField()
+    let githubField = UITextField()
+    
 	let firstName = ContactInputField()
 	let lastName = ContactInputField()
 	let email = ContactInputField()
@@ -46,9 +53,7 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
 		photoPicker.allowsEditing = true
 		photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
 		
-		cameraPicker.delegate = self
-		cameraPicker.allowsEditing = true
-		cameraPicker.sourceType = UIImagePickerControllerSourceType.Camera
+		
         // Do any additional setup after loading the view.
 		if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front) {
 			cameraPicker.delegate = self
@@ -60,6 +65,13 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
+        
+        nameField.delegate = self
+        emailField.delegate = self
+        phoneField.delegate = self
+        twitterField.delegate = self
+        facebookField.delegate = self
+        githubField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,13 +138,12 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
         
         fieldsList.append(line)
         
-        let nameField = UITextField(frame: CGRectMake(20, 100, self.view.bounds.width - 40, 30))
+        nameField.frame =  CGRectMake(20, 100, self.view.bounds.width - 40, 30)
         nameField.backgroundColor = UIColor.whiteColor()
-        nameField.text = "Name"
+        nameField.attributedPlaceholder = NSAttributedString(string:"Name",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
         nameField.textColor = UIColor.lightGrayColor()
         self.view.addSubview(nameField)
-        
-        nameField.delegate = self
         
         fieldsList.append(nameField)
         
@@ -143,13 +154,13 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
         
         fieldsList.append(emailLine)
         
-        let emailField = UITextField(frame: CGRectMake(20, 145, self.view.bounds.width - 40, 30))
+        emailField.frame = CGRectMake(20, 145, self.view.bounds.width - 40, 30)
         emailField.backgroundColor = UIColor.whiteColor()
-        emailField.text = "Email"
+        emailField.attributedPlaceholder = NSAttributedString(string:"Email",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
         emailField.textColor = UIColor.lightGrayColor()
         self.view.addSubview(emailField)
         
-        emailField.delegate = self
         fieldsList.append(emailField)
         
         let phoneLine = UIView()
@@ -159,13 +170,13 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
         
         fieldsList.append(phoneLine)
         
-        let phoneField = UITextField(frame: CGRectMake(20, 190, self.view.bounds.width - 40, 30))
+        phoneField.frame = CGRectMake(20, 190, self.view.bounds.width - 40, 30)
         phoneField.backgroundColor = UIColor.whiteColor()
-        phoneField.text = "Phone"
+        phoneField.attributedPlaceholder = NSAttributedString(string:"Phone",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
         phoneField.textColor = UIColor.lightGrayColor()
         self.view.addSubview(phoneField)
         
-        phoneField.delegate = self
         fieldsList.append(phoneField)
 
         let facebookLine = UIView()
@@ -175,13 +186,13 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
         
         fieldsList.append(facebookLine)
         
-        let facebookField = UITextField(frame: CGRectMake(20, 235, self.view.bounds.width - 40, 30))
+        facebookField.frame = CGRectMake(20, 235, self.view.bounds.width - 40, 30)
         facebookField.backgroundColor = UIColor.whiteColor()
-        facebookField.text = "Facebook"
+        facebookField.attributedPlaceholder = NSAttributedString(string:"Facebook",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
         facebookField.textColor = UIColor.lightGrayColor()
         self.view.addSubview(facebookField)
         
-        facebookField.delegate = self
         fieldsList.append(facebookField)
         
         let twitterLine = UIView()
@@ -191,13 +202,13 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
         
         fieldsList.append(twitterLine)
         
-        let twitterField = UITextField(frame: CGRectMake(20, 280, self.view.bounds.width - 40, 30))
+        twitterField.frame = CGRectMake(20, 280, self.view.bounds.width - 40, 30)
         twitterField.backgroundColor = UIColor.whiteColor()
-        twitterField.text = "Twitter"
+        twitterField.attributedPlaceholder = NSAttributedString(string:"Twitter",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
         twitterField.textColor = UIColor.lightGrayColor()
         self.view.addSubview(twitterField)
         
-        twitterField.delegate = self
         fieldsList.append(twitterField)
         
         let githubLine = UIView()
@@ -207,27 +218,34 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
         
         fieldsList.append(githubLine)
         
-        let githubField = UITextField(frame: CGRectMake(20, 325, self.view.bounds.width - 40, 30))
+        githubField.frame = CGRectMake(20, 325, self.view.bounds.width - 40, 30)
         githubField.backgroundColor = UIColor.whiteColor()
-        githubField.text = "GitHub"
+        githubField.attributedPlaceholder = NSAttributedString(string:"GitHub",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
         githubField.textColor = UIColor.lightGrayColor()
         self.view.addSubview(githubField)
         
-        githubField.delegate = self
         fieldsList.append(githubField)
         
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {    //delegate method
-        for item in fieldsList {
-            UIView.animateWithDuration(0.3, animations: {
-                item.frame.origin.y -= 40
-            })
-        }
+            for item in fieldsList {
+                UIView.animateWithDuration(0.3, animations: {
+                    item.frame.origin.y -= 40
+                })
+           }
     }
     
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {  //delegate method
-        return false
+     
+        for item in fieldsList {
+            UIView.animateWithDuration(0.3, animations: {
+                item.frame.origin.y += 40
+            })
+        }
+        
+        return true
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
