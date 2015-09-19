@@ -22,23 +22,42 @@ extension Double {
 @IBDesignable
 class NetworkBinaryTreeView: UIView {
     
-    
+    var allLines = [UIBezierPath]()
+	var allNodes = [UIBezierPath]()
     
     @IBInspectable
     var scale:CGFloat = 10{didSet{setNeedsDisplay()}}
     var strokeWidth: CGFloat = 2.0
     var known: Bool = true
     var numberOfContactsDrawn: Int = 0
+	
+	var startPoint : CGPoint? = nil
     
-    var viewCenter: CGPoint{
-        return convertPoint(center, fromView: superview)
-    }
-    
+//    var viewCenter: CGPoint{
+//        return convertPoint(center, fromView: superview)
+//    }
+	
     weak var dataSource: NetworkBinaryTreeDataSource?
     
     //TODO:  ask about not having contacts default
-	var contacts : [ContactObject]!
-	var peers : [ContactObject]!
+	
+	let c1 = ContactObject(photo: UIImagePNGRepresentation(UIImage(named: "stevo.png")!), name: "Stephen Melinyshyn")
+	let c2 = ContactObject(photo: nil, name: "Sam Haves")
+	let c3 = ContactObject(photo: nil, name: "David Tsenter")
+	let c4 = ContactObject(photo: nil, name: "Jon Galaperin")
+	var contacts : [ContactObject] = []
+	var peers : [ContactObject] = []
+	
+	convenience init (contacts : [ContactObject], peers : [ContactObject]) {
+		self.init()
+		self.peers = [c1,c2,c3] // TODO: Change to params
+		self.contacts = [c4]
+		self.backgroundColor = UIColor.whiteColor()
+		self.clearsContextBeforeDrawing = true
+		self.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: "scale:"))
+		self.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: "pan:"))
+	}
+
 	
     private struct Constants {
         static let nodeRadius: CGFloat = 4
@@ -51,6 +70,26 @@ class NetworkBinaryTreeView: UIView {
             gesture.scale = 1
         }
     }
+	
+	var initialPanDeltaX : CGFloat!
+	var initialPanDeltaY : CGFloat!
+	func pan(gesture : UIPanGestureRecognizer) {
+		
+		if gesture.state == UIGestureRecognizerState.Began {
+			known = true
+			let place = gesture.locationInView(self)
+			let rootLoc = allNodes.first!.currentPoint
+			initialPanDeltaX = place.x - rootLoc.x
+			initialPanDeltaY = place.y - rootLoc.y
+		} else if gesture.state == .Changed {
+			known = true
+			let place = gesture.locationInView(self)
+			startPoint = CGPoint(x: place.x + initialPanDeltaX, y: place.y + initialPanDeltaY)
+			self.setNeedsDisplay()
+		}
+		
+		
+	}
     
     private func drawLine(startPoint: CGPoint, endPoint: CGPoint) -> UIBezierPath {
         let path = UIBezierPath()
@@ -73,11 +112,12 @@ class NetworkBinaryTreeView: UIView {
         if(known){
             color = UIColor.blueColor()
         }else{
-            color = UIColor(
+            /*color = UIColor(
                 red:0.0,
                 green:0.0,
                 blue:0.0,
-                alpha:0.3)
+                alpha:0.3)*/
+			color = UIColor.greenColor()
         }
         
         return color
@@ -112,9 +152,13 @@ class NetworkBinaryTreeView: UIView {
             color.setStroke()
             color.setFill()
             
-            if(numberOfContactsDrawn < peers.count){
-                drawLine(startPoint, endPoint: endPoint).stroke()
-                drawNode(endPoint).fill()
+            if(numberOfContactsDrawn < (contacts.count + peers.count)){
+                let l = drawLine(startPoint, endPoint: endPoint)
+				l.stroke()
+				allLines.append(l)
+                let n = drawNode(endPoint)
+				n.fill()
+				allNodes.append(n)
                 numberOfContactsDrawn++
             }
             
@@ -124,9 +168,13 @@ class NetworkBinaryTreeView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-		
-        print(CGFloat(findHighestSumOfTwoPower(peers.count)))
-        drawBinaryTree(-90 , startPoint: viewCenter, iter: CGFloat(findHighestSumOfTwoPower(peers.count)) + 1)
+		allNodes.forEach { $0.removeAllPoints() }
+		allLines.forEach { $0.removeAllPoints() }
+		allLines = []
+		allNodes = []
+		print("Cleared lines and nodes")
+		let nodeCount = contacts.count + peers.count
+        drawBinaryTree(-90 , startPoint: startPoint ?? center, iter: CGFloat(findHighestSumOfTwoPower(nodeCount)) + 1)
         numberOfContactsDrawn = 0
     }
 }

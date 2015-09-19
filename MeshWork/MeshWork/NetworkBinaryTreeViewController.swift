@@ -15,30 +15,31 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
     let contactManager = ContactsManager()
     var peers = [MCPeerID : ContactObject]() {
         didSet {
-            sortedPeers = Array(peers.values).sort { $0.0.name < $0.1.name }
+            sortedPeers = Set<ContactObject>(peers.values)
         }
     }
     
-    var sortedPeers = [ContactObject]() {
+    var sortedPeers = Set<ContactObject>() {
         didSet {
-            deviceContacts = sortedPeers.filter{ contactManager.doesHaveContactForName($0.name) }
+            deviceContacts = Set<ContactObject>(Array(sortedPeers).filter{ contactManager.doesHaveContactForName($0.name) })
+			sortedPeers = sortedPeers.subtract(deviceContacts)
         }
     }
     
-    var deviceContacts = [ContactObject]()
+    var deviceContacts = Set<ContactObject>()
     
     @IBOutlet weak var treeView: NetworkBinaryTreeView! {
         didSet{
             treeView.dataSource = self
-			treeView.contacts = deviceContacts
-			treeView.peers = sortedPeers
-            treeView.addGestureRecognizer(UIPinchGestureRecognizer(target: treeView, action: "scale:"))
+			treeView.frame = view.frame
+			self.view = treeView
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        manager.delegate = self 
+        manager.delegate = self
+		treeView = NetworkBinaryTreeView(contacts: [ContactObject](), peers: [ContactObject]())
         // Do any additional setup after loading the view.
     }
     
@@ -60,11 +61,11 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
     }
     
     func contacts(sender: NetworkBinaryTreeView) -> [ContactObject] {
-        return deviceContacts
+        return  Array(deviceContacts)
     }
     
     func peers(sender: NetworkBinaryTreeView) -> [ContactObject] {
-        return sortedPeers
+        return Array(sortedPeers)
     }
     
     //MARK: - MPCManagerDelegate
