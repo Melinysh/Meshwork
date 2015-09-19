@@ -28,6 +28,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 		contact.email = "smmeliny@uwaterloo.ca" // <- hit me up ladies
 		contact.phoneNumber = "420-8008-6969"
 		contact.twitter = "Shaves"
+        contact.github = "Shaves"
 		contact.photo = UIImagePNGRepresentation(UIImage(named: "stevo.png")!)
 		return contact
 		}()
@@ -53,8 +54,6 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ContactTableViewCell
 
         let contact: ContactObject = sortedPeers[indexPath.row]
-        //contact.twitter = "Bless"
-		// contact.facebook = "Jonathan Galperin"
         cell.contact = contact
         cell.nameLabel?.text = contact.name
 		if let photoData = contact.photo {
