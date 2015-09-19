@@ -29,10 +29,6 @@ class ContactTableViewCell: UITableViewCell {
                     facebookImage.hidden = false
                 }
                 
-                if let _ = c.linkedin {
-                    linkedinImage.hidden = false
-                }
-                
                 if let _ = c.github {
                     githubImage.hidden = false
                 }
