@@ -52,7 +52,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ContactTableViewCell
 
-        let contact: ContactObject = ContactObject(photo: UIImage(named: "stevo.png"), name: "Stevo 'The Steve' Steve")//sortedPeers[indexPath.row]
+        let contact: ContactObject = c2//sortedPeers[indexPath.row]
         contact.twitter = "Bless"
         contact.facebook = "Jonathan Galperin"
         contact.linkedin = "sweg"
@@ -66,7 +66,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedPeers.count + 1
+        return sortedPeers.count
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

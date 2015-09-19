@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A531A9411BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A531A93F1BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png */; settings = {ASSET_TAGS = (); }; };
+		A531A9421BAD9A05007A4D98 /* iconmonstr-twitter-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A531A9401BAD9A05007A4D98 /* iconmonstr-twitter-3-icon-24.png */; settings = {ASSET_TAGS = (); }; };
 		A5B4DA9C1BAD16900070BFB5 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B4DA9B1BAD16900070BFB5 /* MainTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A5B4DAA01BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B4DA9F1BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png */; settings = {ASSET_TAGS = (); }; };
 		A5B4DAA21BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B4DAA11BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png */; settings = {ASSET_TAGS = (); }; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A531A93F1BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-linkedin-3-icon-24.png"; sourceTree = "<group>"; };
+		A531A9401BAD9A05007A4D98 /* iconmonstr-twitter-3-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-twitter-3-icon-24.png"; sourceTree = "<group>"; };
 		A5B4DA9B1BAD16900070BFB5 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		A5B4DA9F1BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-twitter-3-icon-24.png"; sourceTree = "<group>"; };
 		A5B4DAA11BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-facebook-3-icon-24.png"; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				A5B4DA9B1BAD16900070BFB5 /* MainTableViewController.swift */,
 				DC51FC7B1BAD13F000E09780 /* Assets.xcassets */,
 				A5B4DA9F1BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png */,
+				A531A93F1BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png */,
+				A531A9401BAD9A05007A4D98 /* iconmonstr-twitter-3-icon-24.png */,
 				A5B4DAA11BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png */,
 				DC51FC7D1BAD13F000E09780 /* LaunchScreen.storyboard */,
 				DC51FC801BAD13F000E09780 /* Info.plist */,
@@ -142,7 +148,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A531A9421BAD9A05007A4D98 /* iconmonstr-twitter-3-icon-24.png in Resources */,
 				DC51FC7F1BAD13F000E09780 /* LaunchScreen.storyboard in Resources */,
+				A531A9411BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png in Resources */,
 				A5B4DAA01BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png in Resources */,
 				DC51FC8B1BAD1FD400E09780 /* stevo.png in Resources */,
 				DC51FC7C1BAD13F000E09780 /* Assets.xcassets in Resources */,
