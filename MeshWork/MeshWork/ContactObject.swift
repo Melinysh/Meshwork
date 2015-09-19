@@ -17,8 +17,7 @@ class ContactObject: NSObject, NSCoding {
   var twitter : String?
   var facebook : String?
   var github : String?
-  var linkedin : String?
-  
+	
   @objc required init?(coder aDecoder: NSCoder) {
 	super.init()
 	photo = aDecoder.decodeObjectForKey("photo") as? NSData
@@ -28,7 +27,6 @@ class ContactObject: NSObject, NSCoding {
     twitter = aDecoder.decodeObjectForKey("twitter") as? String
     facebook = aDecoder.decodeObjectForKey("facebook") as? String
     github = aDecoder.decodeObjectForKey("github") as? String
-    linkedin = aDecoder.decodeObjectForKey("linkedin") as? String
   }
 
 	override init() { super.init() }
@@ -47,7 +45,6 @@ class ContactObject: NSObject, NSCoding {
     aCoder.encodeObject(twitter, forKey: "twitter")
     aCoder.encodeObject(facebook, forKey: "facebook")
     aCoder.encodeObject(github, forKey: "github")
-    aCoder.encodeObject(linkedin, forKey: "linkedin")
   }
   
 }

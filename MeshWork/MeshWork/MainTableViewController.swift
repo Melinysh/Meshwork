@@ -19,19 +19,20 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 		let contact = ContactObject()
 		contact.name = "Sam Haves"
 		contact.email = "shaves@uwaterloo.ca" // <- hit me up ladies
-		contact.phoneNumber = "101-1010-10101"
+		contact.phoneNumber = "101-101-0101"
 		contact.twitter = "Shaves"
+		contact.github = "havess"
 		contact.photo = UIImagePNGRepresentation(UIImage(named: "stevo.png")!)
 		return contact
 	}()
 	
 	var c2 : ContactObject = {
 		let contact = ContactObject()
-		contact.name = "Stephen Melinyshyn"
+		contact.name = "Stephano Melonshine"
 		contact.email = "smmeliny@uwaterloo.ca" // <- hit me up ladies
-		contact.phoneNumber = "420-8008-6969"
-		contact.twitter = "Shaves"
-        contact.github = "Shaves"
+		contact.phoneNumber = "420-808-6969"
+		contact.twitter = "melinysh"
+        contact.github = "melinysh"
 		contact.photo = UIImagePNGRepresentation(UIImage(named: "stevo.png")!)
 		return contact
     }()
