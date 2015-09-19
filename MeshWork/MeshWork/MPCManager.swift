@@ -10,9 +10,7 @@ import UIKit
 import MultipeerConnectivity
 
 protocol MPCManagerDelegate {
-	func foundPeer(peer : MCPeerID)
 	func lostPeer(peer : MCPeerID)
-	func invitationWasReceived(fromPeer: String)
 	func receievedContactFromPeer(peer : MCPeerID, contact : ContactObject)
 }
 
@@ -45,6 +43,9 @@ class MPCManager : NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegat
   
   @objc func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
     foundPeers[peerID.displayName] = peerID
+	if peerID.displayName.compare(selfPeer.displayName) == NSComparisonResult.OrderedAscending {
+		browser.invitePeer(peerID, toSession: session, withContext: nil, timeout: 10)
+	}
   }
   
   @objc func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
@@ -58,8 +59,7 @@ class MPCManager : NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegat
   
   
   @objc func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void) {
-    self.invitationHandler = invitationHandler
-    delegate.invitationWasReceived(peerID.displayName)
+    invitationHandler(true, session)
   }
   
   @objc func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {

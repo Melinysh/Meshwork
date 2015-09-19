@@ -15,9 +15,9 @@ class ContactObject: NSObject, NSCoding {
   var phoneNumber : String?
   var email : String?
   var twitter : String?
-  var facebook : Int?
+  var facebook : String?
   var github : String?
-  var linkedin : Int?
+  var linkedin : String?
   
   required init?(coder aDecoder: NSCoder) {
     photo = aDecoder.decodeObjectForKey("photo") as? UIImage
@@ -25,11 +25,14 @@ class ContactObject: NSObject, NSCoding {
     phoneNumber = aDecoder.decodeObjectForKey("phoneNumber") as? String
     email = aDecoder.decodeObjectForKey("email") as? String
     twitter = aDecoder.decodeObjectForKey("twitter") as? String
-    facebook = aDecoder.decodeIntegerForKey("facebook")
+    facebook = aDecoder.decodeObjectForKey("facebook") as? String
     github = aDecoder.decodeObjectForKey("github") as? String
-    linkedin = aDecoder.decodeIntegerForKey("linkedin")
+    linkedin = aDecoder.decodeObjectForKey("linkedin") as? String
   }
-  
+	
+	override init() {
+		super.init()
+	}
   
     init(photo: UIImage?, name: String!) {
         super.init()
