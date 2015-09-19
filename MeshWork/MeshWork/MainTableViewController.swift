@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MultipeerConnectivity
+import BTNavigationDropdownMenu
 
 class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
@@ -32,7 +33,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
         contact.github = "melinysh"
 		contact.photo = UIImagePNGRepresentation(UIImage(named: "stevo.png")!)
 		return contact
-		}()
+    }()
 	
 	var peerManager : MPCManager!
 	var peers = [MCPeerID : ContactObject]() {
