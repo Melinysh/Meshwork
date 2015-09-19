@@ -33,13 +33,13 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		photoPicker.delegate = self
-		photoPicker.allowsEditing = true
-		photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-		
-		cameraPicker.delegate = self
-		cameraPicker.allowsEditing = true
-		cameraPicker.sourceType = UIImagePickerControllerSourceType.Camera
+//		photoPicker.delegate = self
+//		photoPicker.allowsEditing = true
+//		photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+//		
+//		cameraPicker.delegate = self
+//		cameraPicker.allowsEditing = true
+//		cameraPicker.sourceType = UIImagePickerControllerSourceType.Camera
         // Do any additional setup after loading the view.
     }
 
