@@ -10,7 +10,7 @@ import UIKit
 
 protocol NetworkBinaryTreeDataSource: class {
     func contacts(sender: NetworkBinaryTreeView) -> [String]?
-    func numberOfUsers(sender: NetworkBinaryTreeView) -> Int?
+    func peers(sender: NetworkBinaryTreeView) -> Int?
 }
 
 extension Double {
@@ -34,7 +34,7 @@ class NetworkBinaryTreeView: UIView {
         return convertPoint(center, fromView: superview)
     }
     
-    weak var dataSource: NetworkBinaryTreeDataSource?
+    weak var dataSource: NetworkBinaryTreeDataSource!
     
     //TODO:  ask about not having contacts default
     /*var contacts = ["jim", "jack", "ass", "dick", "jack", "jack", "ass", "dick", "jack", "jack", "ass", "dick", "jack"]

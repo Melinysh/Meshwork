@@ -59,11 +59,11 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
     }
     
     func contacts(sender: NetworkBinaryTreeView) -> [ContactObject] {
-        return sortedPeers
+        return deviceContacts
     }
     
-    func numberOfUsers(sender: NetworkBinaryTreeView) -> Int? {
-        return 24
+    func peers(sender: NetworkBinaryTreeView) -> [ContactObject] {
+        return sortedPeers
     }
     
     //MARK: - MPCManagerDelegate
