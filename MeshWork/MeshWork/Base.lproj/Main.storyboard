@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="md9-H2-oLf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -33,8 +34,8 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Contact Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hms-bR-5Bb">
-                                            <rect key="frame" x="108" y="14" width="118" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hms-bR-5Bb">
+                                            <rect key="frame" x="108" y="14.5" width="109" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,12 +49,12 @@
                                             <rect key="frame" x="142" y="48" width="24" height="24"/>
                                             <animations/>
                                         </imageView>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iconmonstr-linkedin-3-icon-24.png" translatesAutoresizingMaskIntoConstraints="NO" id="rxB-3N-xPE">
-                                            <rect key="frame" x="176" y="48" width="26" height="24"/>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-linkedin-3-icon-24.png" translatesAutoresizingMaskIntoConstraints="NO" id="rxB-3N-xPE">
+                                            <rect key="frame" x="176" y="48" width="24" height="24"/>
                                             <animations/>
                                         </imageView>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iconmonstr-github-3-icon-24.png" translatesAutoresizingMaskIntoConstraints="NO" id="RHw-Y1-fZY">
-                                            <rect key="frame" x="212" y="48" width="26" height="24"/>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-github-3-icon-24.png" translatesAutoresizingMaskIntoConstraints="NO" id="RHw-Y1-fZY">
+                                            <rect key="frame" x="210" y="48" width="24" height="24"/>
                                             <animations/>
                                         </imageView>
                                     </subviews>
@@ -213,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="1318" y="1059"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Input Form View Controller-->
         <scene sceneID="SMG-O6-wdG">
             <objects>
-                <viewController id="7aL-rM-Gbb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inputVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7aL-rM-Gbb" customClass="ContactInputFormViewController" customModule="MeshWork" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FLT-MP-29P"/>
                         <viewControllerLayoutGuide type="bottom" id="Ouf-r0-oLD"/>
@@ -226,30 +227,88 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who are you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwu-Cn-Mfh">
-                                <rect key="frame" x="235" y="20" width="131" height="24"/>
+                                <rect key="frame" x="234.5" y="30" width="131" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agY-QF-usK">
-                                <rect key="frame" x="252" y="103" width="97" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bV-wD-6iS">
+                                <rect key="frame" x="252" y="144" width="97" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <state key="normal" title="Choose Photo"/>
+                                <connections>
+                                    <action selector="choosePhoto:" destination="7aL-rM-Gbb" eventType="touchUpInside" id="vr1-PO-Cdv"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFr-Yt-80X">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="NEd-C4-Jg9"/>
+                                    <constraint firstAttribute="height" constant="200" id="PAJ-iS-tSZ"/>
+                                    <constraint firstAttribute="width" secondItem="FFr-Yt-80X" secondAttribute="height" multiplier="1:1" id="SLt-qH-7zb"/>
+                                    <constraint firstAttribute="width" constant="200" id="qIZ-bh-bfG"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NEd-C4-Jg9"/>
+                                        <exclude reference="SLt-qH-7zb"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFc-rY-FHq">
+                                <rect key="frame" x="262" y="106" width="77" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="7aL-rM-Gbb" eventType="touchUpInside" id="qzi-EH-NAt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsU-4X-yoQ">
+                                <rect key="frame" x="282" y="550" width="37" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneInputForm:" destination="7aL-rM-Gbb" eventType="touchUpInside" id="LaB-fA-aLn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4bV-wD-6iS" firstAttribute="top" secondItem="HFc-rY-FHq" secondAttribute="bottom" constant="8" id="3vH-en-SXv"/>
+                            <constraint firstItem="FFr-Yt-80X" firstAttribute="top" secondItem="4bV-wD-6iS" secondAttribute="bottom" constant="26" id="7He-j6-ftq"/>
+                            <constraint firstItem="HFc-rY-FHq" firstAttribute="centerX" secondItem="4bV-wD-6iS" secondAttribute="centerX" id="CUr-yB-ycg"/>
+                            <constraint firstItem="4bV-wD-6iS" firstAttribute="leading" secondItem="FFr-Yt-80X" secondAttribute="trailing" constant="-148" id="Cd4-7d-i2F"/>
+                            <constraint firstItem="4bV-wD-6iS" firstAttribute="top" secondItem="FLT-MP-29P" secondAttribute="bottom" constant="367" id="H8N-mo-EOu"/>
+                            <constraint firstItem="FFr-Yt-80X" firstAttribute="centerX" secondItem="4bV-wD-6iS" secondAttribute="centerX" id="L7y-Ae-UU2"/>
+                            <constraint firstItem="FFr-Yt-80X" firstAttribute="centerY" secondItem="xjT-kt-uVH" secondAttribute="centerY" id="OaL-WF-iu6"/>
+                            <constraint firstItem="FFr-Yt-80X" firstAttribute="centerX" secondItem="xjT-kt-uVH" secondAttribute="centerX" id="RrH-Kp-0a9"/>
                             <constraint firstItem="Jwu-Cn-Mfh" firstAttribute="centerX" secondItem="xjT-kt-uVH" secondAttribute="centerX" id="SVU-te-0gW"/>
-                            <constraint firstItem="Jwu-Cn-Mfh" firstAttribute="top" secondItem="FLT-MP-29P" secondAttribute="bottom" id="faZ-ak-ghh"/>
+                            <constraint firstItem="4bV-wD-6iS" firstAttribute="centerY" secondItem="xjT-kt-uVH" secondAttribute="centerY" id="W8X-hd-EVd"/>
+                            <constraint firstItem="QsU-4X-yoQ" firstAttribute="centerX" secondItem="xjT-kt-uVH" secondAttribute="centerX" id="cEz-IV-Uvs"/>
+                            <constraint firstItem="Ouf-r0-oLD" firstAttribute="top" secondItem="QsU-4X-yoQ" secondAttribute="bottom" constant="20" id="cW6-7p-IgD"/>
+                            <constraint firstItem="4bV-wD-6iS" firstAttribute="centerX" secondItem="xjT-kt-uVH" secondAttribute="centerX" id="dxt-hz-Ydl"/>
+                            <constraint firstItem="Jwu-Cn-Mfh" firstAttribute="top" secondItem="FLT-MP-29P" secondAttribute="bottom" constant="10" id="faZ-ak-ghh"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RrH-Kp-0a9"/>
+                                <exclude reference="Cd4-7d-i2F"/>
+                                <exclude reference="H8N-mo-EOu"/>
+                                <exclude reference="W8X-hd-EVd"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="doneButton" destination="QsU-4X-yoQ" id="0N9-EU-nGI"/>
+                        <outlet property="userPhoto" destination="FFr-Yt-80X" id="z4F-Zj-xLT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTl-oU-mRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="1735"/>
+            <point key="canvasLocation" x="392" y="1797"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ACD-iH-cpm">

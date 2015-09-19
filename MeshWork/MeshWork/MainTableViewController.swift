@@ -14,29 +14,14 @@ import BTNavigationDropdownMenu
 class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
     let navigationItems = ["Near Me", "Stats"]
-    
-	var c : ContactObject = {
-		let contact = ContactObject()
-		contact.name = "Sam Haves"
-		contact.email = "shaves@uwaterloo.ca" // <- hit me up ladies
-		contact.phoneNumber = "101-101-0101"
-		contact.twitter = "Shaves"
-		contact.github = "havess"
-		contact.photo = UIImagePNGRepresentation(UIImage(named: "stevo.png")!)
-		return contact
-	}()
-	
-	var c2 : ContactObject = {
-		let contact = ContactObject()
-		contact.name = "Stephano Melonshine"
-		contact.email = "smmeliny@uwaterloo.ca" // <- hit me up ladies
-		contact.phoneNumber = "420-808-6969"
-		contact.twitter = "melinysh"
-        contact.github = "melinysh"
-		contact.photo = UIImagePNGRepresentation(UIImage(named: "stevo.png")!)
-		return contact
-    }()
-	
+	var selfContact : ContactObject! = nil {
+		didSet {
+			if NSUserDefaults.standardUserDefaults().objectForKey("selfContact") == nil {
+				NSUserDefaults.standardUserDefaults().setObject(NSKeyedArchiver.archivedDataWithRootObject(selfContact), forKey: "selfContact")
+				NSUserDefaults.standardUserDefaults().synchronize()
+			}
+		}
+	}
 	var peerManager : MPCManager!
 	var peers = [MCPeerID : ContactObject]() {
 		didSet {
@@ -49,26 +34,39 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		peerManager = MPCManager(delegate: self, selfContact: UIDevice().name == "iPhone" ? c : c2) //changed to make testing easier
-		peerManager.advertiser.startAdvertisingPeer()
-		peerManager.browser.startBrowsingForPeers()
-        
-        let menuView = BTNavigationDropdownMenu(title: navigationItems.first!, items: navigationItems)
-        self.navigationItem.titleView = menuView
-        
-        menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
-            print("Did select item at index: \(indexPath)")
-            if indexPath == 1 {
-                let vc = StatsViewController()
-                let nv = UINavigationController(rootViewController: vc)
-                self.presentViewController(nv, animated: true, completion: nil)
-            }
-        }
+		
+		if let contactData = NSUserDefaults.standardUserDefaults().dataForKey("selfContact") {
+			selfContact = NSKeyedUnarchiver.unarchiveObjectWithData(contactData) as! ContactObject
+		}
+		
+		if selfContact == nil {
+			let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
+			inputForm.beaneathVC = self 
+			presentViewController(inputForm, animated: true, completion: nil)
+		} else {
+			peerManager = MPCManager(delegate: self, selfContact: selfContact)
+			peerManager.advertiser.startAdvertisingPeer()
+			peerManager.browser.startBrowsingForPeers()
+			
+			let menuView = BTNavigationDropdownMenu(title: navigationItems.first!, items: navigationItems)
+			self.navigationItem.titleView = menuView
+			
+			menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+				print("Did select item at index: \(indexPath)")
+				if indexPath == 1 {
+					let vc = StatsViewController()
+					let nv = UINavigationController(rootViewController: vc)
+					self.presentViewController(nv, animated: true, completion: nil)
+				}
+			}
+		}
+		
+		
     }
-    
+	
     override func viewWillAppear(animated: Bool) {
     }
-    
+	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ContactTableViewCell
 

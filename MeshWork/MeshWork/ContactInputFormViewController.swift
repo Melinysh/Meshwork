@@ -13,7 +13,7 @@ class ContactInputField: UITextField {
 	var placeholderText: String?
 }
 
-class ContactInputFormViewController: UIViewController, UIImagePickerControllerDelegate {
+class ContactInputFormViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 	let firstName = ContactInputField()
 	let lastName = ContactInputField()
@@ -22,13 +22,24 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
 	let twitterHandle = ContactInputField()
 	let githubHanlde = ContactInputField()
 	
+	var beaneathVC : MainTableViewController! = MainTableViewController()
+	
+	
+	@IBOutlet weak var userPhoto: UIImageView!
+	@IBOutlet weak var doneButton: UIButton!
+	
 	let photoPicker = UIImagePickerController()
+	let cameraPicker = UIImagePickerController()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		photoPicker.delegate = self
-		photoPicker.allowsEditing = false
+		photoPicker.allowsEditing = true
+		photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
 		
+		cameraPicker.delegate = self
+		cameraPicker.allowsEditing = true
+		cameraPicker.sourceType = UIImagePickerControllerSourceType.Camera
         // Do any additional setup after loading the view.
     }
 
@@ -36,9 +47,33 @@ class ContactInputFormViewController: UIViewController, UIImagePickerControllerD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
- func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
 	
+	@IBAction func doneInputForm(sender: AnyObject) {
+		let contact = ContactObject()
+		contact.name = firstName.text! + " " + lastName.text!
+		contact.email = email.text
+		contact.phoneNumber = phoneNumber.text
+		contact.twitter = twitterHandle.text
+		contact.github = githubHanlde.text
+		if let photo = userPhoto.image {
+			contact.photo = UIImagePNGRepresentation(photo)
+		}
+		beaneathVC.selfContact = contact
+		dismissViewControllerAnimated(true, completion: nil)
+	
+	}
+	@IBAction func takePhoto(sender: AnyObject) {
+		presentViewController(cameraPicker, animated: true, completion: nil)
+	}
+	
+	@IBAction func choosePhoto(sender: AnyObject) {
+		presentViewController(photoPicker, animated: true, completion: nil)
+		
+	}
+	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+		userPhoto.image = image
+		picker.dismissViewControllerAnimated(true, completion: nil)
+		
 	}
 	
 	func imagePickerControllerDidCancel(picker: UIImagePickerController) {
