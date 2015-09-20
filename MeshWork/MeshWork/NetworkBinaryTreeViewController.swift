@@ -85,13 +85,13 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
     
     func lostPeer(peer: MCPeerID) {
         peers.removeValueForKey(peer)
-        //refresh drawing
+        treeView.setNeedsDisplay()
         
     }
     
     func receievedContactFromPeer(peer: MCPeerID, contact: ContactObject) {
         peers[peer] = contact
-        // refresh drawing
+        treeView.setNeedsDisplay()
     }
 
 }

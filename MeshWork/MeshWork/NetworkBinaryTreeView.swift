@@ -36,31 +36,30 @@ class NetworkBinaryTreeView: UIView {
 	var controller : NetworkBinaryTreeViewController!
     
     @IBInspectable
-    var scale:CGFloat = 10{didSet{setNeedsDisplay()}}
+    var scale:CGFloat = 30{didSet{setNeedsDisplay()}}
     var strokeWidth: CGFloat = 2.0
     var known: Bool = true
     var numberOfContactsDrawn: Int = 0
 	
-	//var startPoint : CGPoint? = nil
-	
-	
     
     weak var dataSource: NetworkBinaryTreeDataSource!
-
-    
-    //TODO:  ask about not having contacts default
 	
 	let c1 = ContactObject(photo: UIImagePNGRepresentation(UIImage(named: "stevo.png")!), name: "Stephen Melinyshyn")
 	let c2 = ContactObject(photo: nil, name: "Sam Haves")
 	let c3 = ContactObject(photo: nil, name: "David Tsenter")
 	let c4 = ContactObject(photo: nil, name: "Jon Galaperin")
+    let c5 = ContactObject(photo: nil, name: "Jack")
+    let c6 = ContactObject(photo: nil, name: "Bill")
+    let c7 = ContactObject(photo: nil, name: "Alex")
+    let c8 = ContactObject(photo: nil, name: "Jose")
 	var contacts : [ContactObject] = []
 	var peers : [ContactObject] = []
 	
 	convenience init (contacts : [ContactObject], peers : [ContactObject]) {
 		self.init()
-		self.peers = peers // [c1,c2,c3] for testing only
-		self.contacts = contacts
+
+		self.peers = [c1,c2,c3,c6] // TODO: Change to params
+		self.contacts = [c4,c8,c7,c5]
 
         self.curX = center.x
         self.curY = center.y
@@ -80,6 +79,9 @@ class NetworkBinaryTreeView: UIView {
         if gesture.state == .Changed {
             known = true
             scale *= gesture.scale
+            //trying to fix scaling
+            //deltaX += (scale/10)
+            //deltaY += (scale/10)
             gesture.scale = 1
         }
     }
@@ -97,8 +99,6 @@ class NetworkBinaryTreeView: UIView {
 			known = true
 			initPoint = gesture.locationInView(self)
             shiftPoint = CGPoint(x: deltaX, y: deltaY)
-			/*initialPanDeltaX = place.x - rootLoc.x
-			initialPanDeltaY = place.y - rootLoc.y*/
 		} else if gesture.state == .Changed {
 			known = true
 			let place = gesture.locationInView(self)
@@ -107,7 +107,6 @@ class NetworkBinaryTreeView: UIView {
             
             deltaX = shiftPoint.x + x
             deltaY = shiftPoint.y + y
-			//startPoint = CGPoint(x: place.x + initialPanDeltaX, y: place.y + initialPanDeltaY)
 			self.setNeedsDisplay()
         }
 		
@@ -162,6 +161,8 @@ class NetworkBinaryTreeView: UIView {
 		}
         return path
     }
+    
+    //TODO: randomize which cat picture is a placeholder
 	
 	
 	
