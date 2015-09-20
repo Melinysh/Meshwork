@@ -8,10 +8,15 @@
 
 import UIKit
 import MultipeerConnectivity
+import BTNavigationDropdownMenu
+
 
 class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSource, MPCManagerDelegate {
     // must be set by another VC before transition
     var manager : MPCManager!
+	
+	let navigationItems = ["List", "Stats"]
+
 	
     let contactManager = ContactsManager()
     var peers = [MCPeerID : ContactObject]() {
@@ -54,8 +59,10 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
         manager.delegate = self
 		treeView = NetworkBinaryTreeView(contacts: Array(deviceContacts) , peers: Array(sortedPeers))
         // Do any additional setup after loading the view.
+		
+		
     }
-    
+	
     override func viewDidAppear(animated: Bool) {
         manager.delegate = self //MARK: - MPCManagerDelegate
         
@@ -66,7 +73,30 @@ class NetworkBinaryTreeViewController: UIViewController, NetworkBinaryTreeDataSo
         func receievedContactFromPeer(peer: MCPeerID, contact: ContactObject) {
             peers[peer] = contact
         }
+		
     }
+	
+	override func viewWillAppear(animated: Bool) {
+		let menuView = BTNavigationDropdownMenu(title: "Network Graph", items: navigationItems)
+		self.navigationItem.titleView = menuView
+		self.navigationItem.hidesBackButton = true;
+
+		menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+			print("Did select item at index: \(indexPath)")
+			if indexPath == 0 {
+				self.navigationController?.popToRootViewControllerAnimated(true)
+				self.dismissViewControllerAnimated(true, completion: {
+					let menuView = BTNavigationDropdownMenu(title: "Nearby", items: ["Network Graph", "Stats"])
+					self.navigationItem.titleView = menuView
+				})
+			} else {
+				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("statsVC") as! StatsViewController
+				vc.peers = self.peers
+				vc.peerManager = self.manager
+				self.navigationController?.pushViewController(vc, animated: true)
+			}
+		}
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

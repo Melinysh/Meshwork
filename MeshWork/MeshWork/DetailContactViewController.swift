@@ -37,6 +37,20 @@ class DetailContactViewController: UIViewController {
 	
 	@IBAction func addToContacts(sender: AnyObject) {
 		manager.addContact(contact)
+		
+		let imageV = UIImageView(image: UIImage(named: "addedContacts.png")!)
+		imageV.center = view.center
+		imageV.alpha = 0
+		view.addSubview(imageV)
+		UIView.animateWithDuration(1.0, animations: { () -> Void in
+			imageV.alpha = 1
+			}) { (isFinished) -> Void in
+				UIView.animateWithDuration(0.7, delay: 0.5, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+					imageV.alpha = 0
+					}, completion: { (fin) -> Void in
+						imageV.removeFromSuperview()
+				})
+		}
 	}
     
 

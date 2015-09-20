@@ -13,7 +13,7 @@ import BTNavigationDropdownMenu
 
 class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
-    let navigationItems = ["Near Me", "Stats"]
+    let navigationItems = ["Network Graph", "Stats"]
 	var selfContact : ContactObject! = nil {
 		didSet {
 			if NSUserDefaults.standardUserDefaults().objectForKey("selfContact") == nil {
@@ -22,6 +22,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 			}
 		}
 	}
+	let contactManager = ContactsManager()
 	var peerManager : MPCManager!
 	var peers = [MCPeerID : ContactObject]() {
 		didSet {
@@ -31,13 +32,28 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
 	var sortedPeers = [ContactObject]()
 
-	@IBAction func showTree(sender: AnyObject) {
-		let treeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("treeVC") as! NetworkBinaryTreeViewController
-		treeVC.manager = peerManager
-		treeVC.peers = peers
-		navigationController?.pushViewController(treeVC, animated: true)
-	}
 	
+	@IBAction func massAdd(sender: AnyObject) {
+		
+		for c in sortedPeers {
+			contactManager.addContact(c)
+		}
+		
+		let imageV = UIImageView(image: UIImage(named: "addedAll.png")!)
+		imageV.center = view.center
+		imageV.alpha = 0
+		view.addSubview(imageV)
+		UIView.animateWithDuration(1.0, animations: { () -> Void in
+			imageV.alpha = 1
+			}) { (isFinished) -> Void in
+				UIView.animateWithDuration(0.7, delay: 0.5, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+					imageV.alpha = 0
+					}, completion: { (fin) -> Void in
+						imageV.removeFromSuperview()
+				})
+		}
+		
+	}
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -46,17 +62,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 
         }
         
-        let menuView = BTNavigationDropdownMenu(title: navigationItems.first!, items: navigationItems)
-        self.navigationItem.titleView = menuView
-        
-        menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
-            print("Did select item at index: \(indexPath)")
-            if indexPath == 1 {
-                let vc = StatsViewController()
-                let nv = UINavigationController(rootViewController: vc)
-                self.presentViewController(nv, animated: true, completion: nil)
-            }
-        }
+		
         
 		if selfContact == nil {
 			let inputForm = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("inputVC") as! ContactInputFormViewController
@@ -85,7 +91,23 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
     }
 	
     override func viewWillAppear(animated: Bool) {
-    
+		let menuView = BTNavigationDropdownMenu(title: "Nearby", items: navigationItems)
+		self.navigationItem.titleView = menuView
+		self.navigationItem.hidesBackButton = true;
+		menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+			print("Did select item at index: \(indexPath)")
+			if indexPath == 1 {
+				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("statsVC") as! StatsViewController
+				vc.peers = self.peers
+				vc.peerManager = self.peerManager
+				self.navigationController?.pushViewController(vc, animated: true)
+			} else {
+				let treeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("treeVC") as! NetworkBinaryTreeViewController
+				treeVC.manager = self.peerManager
+				treeVC.peers = self.peers
+				self.navigationController?.pushViewController(treeVC, animated: true)
+			}
+		}
     }
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -96,6 +118,7 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
         cell.nameLabel?.text = contact.name
 		if let photoData = contact.photo {
 			cell.photo.image = UIImage(data: photoData)
+			cell.photo.layer.cornerRadius = 35 
 		}
         return cell
     }
@@ -122,12 +145,16 @@ class MainTableViewController: UITableViewController, MPCManagerDelegate {
 	
 	func lostPeer(peer: MCPeerID) {
 		peers.removeValueForKey(peer)
-		tableView.reloadData()
+		NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+			self.tableView.reloadData()
+		}
 	}
 	
 	func receievedContactFromPeer(peer: MCPeerID, contact: ContactObject) {
 		peers[peer] = contact
-		tableView.reloadData()
+		NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+			self.tableView.reloadData()
+		}
 	}
 	
 	

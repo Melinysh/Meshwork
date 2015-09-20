@@ -44,7 +44,7 @@ class MPCManager : NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegat
   @objc func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
     foundPeers[peerID.displayName] = peerID
 	if peerID.displayName.compare(selfPeer.displayName) == NSComparisonResult.OrderedAscending {
-		browser.invitePeer(peerID, toSession: session, withContext: nil, timeout: 10)
+		browser.invitePeer(peerID, toSession: session, withContext: nil, timeout: 30)
 	}
   }
   

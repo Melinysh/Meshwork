@@ -45,7 +45,7 @@ class NetworkBinaryTreeView: UIView {
     weak var dataSource: NetworkBinaryTreeDataSource!
 	
 	let c1 = ContactObject(photo: UIImagePNGRepresentation(UIImage(named: "stevo.png")!), name: "Stephen Melinyshyn")
-	let c2 = ContactObject(photo: nil, name: "Sam Haves")
+	let c2 = ContactObject(photo:  nil, name: "Sam Haves")
 	let c3 = ContactObject(photo: nil, name: "David Tsenter")
 	let c4 = ContactObject(photo: nil, name: "Jon Galaperin")
     let c5 = ContactObject(photo: nil, name: "Jack")
@@ -58,8 +58,8 @@ class NetworkBinaryTreeView: UIView {
 	convenience init (contacts : [ContactObject], peers : [ContactObject]) {
 		self.init()
 
-		self.peers = [c1,c2,c3,c6] // TODO: Change to params
-		self.contacts = [c4,c8,c7,c5]
+		self.peers =  peers  + [c1,c2,c3,c6] // TODO: Change to params
+		self.contacts =  contacts + [c4,c8,c7,c5]
 
         self.curX = center.x
         self.curY = center.y
@@ -239,7 +239,7 @@ class NetworkBinaryTreeView: UIView {
 		let nodeCount = contacts.count + peers.count
         curX = center.x + deltaX
         curY = center.y + deltaY
-        print("\(curX) \(curY)")
+		//    print("\(curX) \(curY)")
         drawBinaryTree(-90 , x: curX , y: curY, iter: CGFloat(findHighestSumOfTwoPower(nodeCount)) + 1)
         numberOfContactsDrawn = 0
     }

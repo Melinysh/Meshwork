@@ -25,6 +25,8 @@
 		DC51FC871BAD14E400E09780 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC51FC861BAD14E400E09780 /* MPCManager.swift */; };
 		DC51FC891BAD161500E09780 /* ContactObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC51FC881BAD161500E09780 /* ContactObject.swift */; };
 		DC51FC8B1BAD1FD400E09780 /* stevo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC51FC8A1BAD1FD400E09780 /* stevo.png */; };
+		DC68FA711BAEB6EF001D11A7 /* addedAll.png in Resources */ = {isa = PBXBuildFile; fileRef = DC68FA6F1BAEB6EF001D11A7 /* addedAll.png */; settings = {ASSET_TAGS = (); }; };
+		DC68FA721BAEB6EF001D11A7 /* addedContacts.png in Resources */ = {isa = PBXBuildFile; fileRef = DC68FA701BAEB6EF001D11A7 /* addedContacts.png */; settings = {ASSET_TAGS = (); }; };
 		DCAE22B31BAE16DE002AFFBD /* placeholder.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DCAE22B21BAE16DE002AFFBD /* placeholder.jpeg */; settings = {ASSET_TAGS = (); }; };
 		DCC8B95D1BADB42600158218 /* ContactInputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8B95C1BADB42600158218 /* ContactInputFormViewController.swift */; };
 		DCE59DC61BAD7F950076D0C3 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE59DC51BAD7F950076D0C3 /* ContactTableViewCell.swift */; };
@@ -54,6 +56,8 @@
 		DC51FC861BAD14E400E09780 /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 		DC51FC881BAD161500E09780 /* ContactObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactObject.swift; sourceTree = "<group>"; };
 		DC51FC8A1BAD1FD400E09780 /* stevo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stevo.png; sourceTree = "<group>"; };
+		DC68FA6F1BAEB6EF001D11A7 /* addedAll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addedAll.png; sourceTree = "<group>"; };
+		DC68FA701BAEB6EF001D11A7 /* addedContacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addedContacts.png; sourceTree = "<group>"; };
 		DCAE22B21BAE16DE002AFFBD /* placeholder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpeg; sourceTree = "<group>"; };
 		DCC8B95C1BADB42600158218 /* ContactInputFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInputFormViewController.swift; sourceTree = "<group>"; };
 		DCE59DC51BAD7F950076D0C3 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 				DCE59DC71BAD8D530076D0C3 /* DetailContactViewController.swift */,
 				DC51FC8A1BAD1FD400E09780 /* stevo.png */,
 				DC51FC781BAD13F000E09780 /* Main.storyboard */,
+				DC68FA6F1BAEB6EF001D11A7 /* addedAll.png */,
+				DC68FA701BAEB6EF001D11A7 /* addedContacts.png */,
 				DCC8B95C1BADB42600158218 /* ContactInputFormViewController.swift */,
 				A5B4DA9B1BAD16900070BFB5 /* MainTableViewController.swift */,
 				DC51FC7B1BAD13F000E09780 /* Assets.xcassets */,
@@ -206,9 +212,11 @@
 				DC51FC7F1BAD13F000E09780 /* LaunchScreen.storyboard in Resources */,
 				A531A9411BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png in Resources */,
 				A5B4DAA01BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png in Resources */,
+				DC68FA711BAEB6EF001D11A7 /* addedAll.png in Resources */,
 				DC51FC8B1BAD1FD400E09780 /* stevo.png in Resources */,
 				DC51FC7C1BAD13F000E09780 /* Assets.xcassets in Resources */,
 				A5B4DAA21BAD8B930070BFB5 /* iconmonstr-facebook-3-icon-24.png in Resources */,
+				DC68FA721BAEB6EF001D11A7 /* addedContacts.png in Resources */,
 				DC51FC7A1BAD13F000E09780 /* Main.storyboard in Resources */,
 				A531A9441BAD9A7B007A4D98 /* iconmonstr-github-3-icon-24.png in Resources */,
 			);
