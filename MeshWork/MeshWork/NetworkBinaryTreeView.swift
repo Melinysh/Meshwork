@@ -36,7 +36,7 @@ class NetworkBinaryTreeView: UIView {
 	var controller : NetworkBinaryTreeViewController!
     
     @IBInspectable
-    var scale:CGFloat = 10{didSet{setNeedsDisplay()}}
+    var scale:CGFloat = 30{didSet{setNeedsDisplay()}}
     var strokeWidth: CGFloat = 2.0
     var known: Bool = true
     var numberOfContactsDrawn: Int = 0
@@ -78,6 +78,9 @@ class NetworkBinaryTreeView: UIView {
         if gesture.state == .Changed {
             known = true
             scale *= gesture.scale
+            //trying to fix scaling
+            //deltaX += (scale/10)
+            //deltaY += (scale/10)
             gesture.scale = 1
         }
     }
