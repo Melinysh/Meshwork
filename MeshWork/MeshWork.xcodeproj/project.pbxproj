@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		16D9992527A052977DBC3462 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0604641F6207EDAC5EF6279A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A7562FD1BAE67A7002BABA8 /* cat2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A7562FC1BAE67A7002BABA8 /* cat2.jpg */; settings = {ASSET_TAGS = (); }; };
+		1A7562FF1BAE67DD002BABA8 /* cat3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A7562FE1BAE67DD002BABA8 /* cat3.jpg */; settings = {ASSET_TAGS = (); }; };
 		1AE72CEE1BADE0FB006F5F8E /* NetworkBinaryTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE72CEC1BADE0FB006F5F8E /* NetworkBinaryTreeView.swift */; };
 		1AE72CEF1BADE0FB006F5F8E /* NetworkBinaryTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE72CED1BADE0FB006F5F8E /* NetworkBinaryTreeViewController.swift */; };
 		A531A9411BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = A531A93F1BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		0604641F6207EDAC5EF6279A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7562FC1BAE67A7002BABA8 /* cat2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat2.jpg; sourceTree = "<group>"; };
+		1A7562FE1BAE67DD002BABA8 /* cat3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat3.jpg; sourceTree = "<group>"; };
 		1AE72CEC1BADE0FB006F5F8E /* NetworkBinaryTreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkBinaryTreeView.swift; sourceTree = "<group>"; };
 		1AE72CED1BADE0FB006F5F8E /* NetworkBinaryTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkBinaryTreeViewController.swift; sourceTree = "<group>"; };
 		4D230C0B3E5EF829D2C8B6A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				A5DFAF311BAD9FF100FF1BF0 /* StatsViewController.swift */,
 				1AE72CEC1BADE0FB006F5F8E /* NetworkBinaryTreeView.swift */,
 				DCAE22B21BAE16DE002AFFBD /* placeholder.jpeg */,
+				1A7562FC1BAE67A7002BABA8 /* cat2.jpg */,
+				1A7562FE1BAE67DD002BABA8 /* cat3.jpg */,
 				1AE72CED1BADE0FB006F5F8E /* NetworkBinaryTreeViewController.swift */,
 				DC51FC741BAD13F000E09780 /* AppDelegate.swift */,
 				DC51FC861BAD14E400E09780 /* MPCManager.swift */,
@@ -194,7 +200,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7562FF1BAE67DD002BABA8 /* cat3.jpg in Resources */,
 				DCAE22B31BAE16DE002AFFBD /* placeholder.jpeg in Resources */,
+				1A7562FD1BAE67A7002BABA8 /* cat2.jpg in Resources */,
 				DC51FC7F1BAD13F000E09780 /* LaunchScreen.storyboard in Resources */,
 				A531A9411BAD9A05007A4D98 /* iconmonstr-linkedin-3-icon-24.png in Resources */,
 				A5B4DAA01BAD89640070BFB5 /* iconmonstr-twitter-3-icon-24.png in Resources */,

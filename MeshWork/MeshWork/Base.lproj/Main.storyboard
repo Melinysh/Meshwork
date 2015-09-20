@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--People Nearby-->
+        <!--People near me-->
         <scene sceneID="7hL-WO-gLz">
             <objects>
                 <tableViewController id="xGP-gs-rVf" customClass="MainTableViewController" customModule="MeshWork" customModuleProvider="target" sceneMemberID="viewController">
@@ -112,7 +112,7 @@
                             <outlet property="delegate" destination="xGP-gs-rVf" id="I0n-7A-aia"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="People Nearby" id="pwd-8G-YKb">
+                    <navigationItem key="navigationItem" title="People near me" id="pwd-8G-YKb">
                         <barButtonItem key="rightBarButtonItem" title="Tree" id="Rzx-a8-jqH">
                             <connections>
                                 <action selector="showTree:" destination="xGP-gs-rVf" id="vvQ-pd-zkA"/>
@@ -136,31 +136,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNm-nK-aLw">
-                                <rect key="frame" x="244" y="550" width="112" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNm-nK-aLw">
+                                <rect key="frame" x="217" y="550" width="166" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Add to Contacts"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
+                                <state key="normal" title="Add to Contacts">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="addToContacts:" destination="jDF-68-VxG" eventType="touchUpInside" id="g7O-Ru-hEc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AH-kV-0i5">
-                                <rect key="frame" x="280" y="255" width="41" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AH-kV-0i5">
+                                <rect key="frame" x="273" y="255" width="53" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="NMU-ia-LhN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3Z-A5-qg3">
-                                <rect key="frame" x="276" y="215" width="49" height="21"/>
+                                <rect key="frame" x="273" y="215" width="54" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cP4-Uh-lVh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzE-kM-FMY">
+                                <rect key="frame" x="30" y="167" width="540" height="27"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="GT6-DU-Jjx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -178,16 +191,6 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzE-kM-FMY">
-                                <rect key="frame" x="30" y="167" width="540" height="27"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="GT6-DU-Jjx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.32090984769999997" green="0.78499265399999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -311,7 +314,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.32090984769999997" green="0.78499265399999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.32142936873760963" green="0.78271408594625314" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="4bV-wD-6iS" firstAttribute="top" secondItem="HFc-rY-FHq" secondAttribute="bottom" constant="8" id="3vH-en-SXv"/>
                             <constraint firstItem="FFr-Yt-80X" firstAttribute="top" secondItem="4bV-wD-6iS" secondAttribute="bottom" constant="26" id="7He-j6-ftq"/>

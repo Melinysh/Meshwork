@@ -22,7 +22,7 @@ class DetailContactViewController: UIViewController {
         super.viewDidLoad()
 		if let pData = contact.photo {
 			imageView.image = UIImage(data: pData)
-			imageView.layer.cornerRadius = 5
+			imageView.layer.cornerRadius = imageView.frame.height / 2
 		}
 		nameLabel.text = contact.name
 		emailLabel.text = contact.email
