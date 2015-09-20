@@ -61,10 +61,6 @@ class NetworkBinaryTreeView: UIView {
 		self.peers = [c1,c2,c3,c6] // TODO: Change to params
 		self.contacts = [c4,c8,c7,c5]
 
-		self.peers = peers // [c1,c2,c3] for testing only
-		self.contacts = contacts
-
-
         self.curX = center.x
         self.curY = center.y
 
