@@ -147,6 +147,17 @@
                                     <action selector="addToContacts:" destination="jDF-68-VxG" eventType="touchUpInside" id="g7O-Ru-hEc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBI-j3-5TY">
+                                <rect key="frame" x="242" y="491" width="115" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <state key="normal" title="See on Twitter">
+                                    <color key="titleColor" red="0.1099797379" green="0.0" blue="0.65876554320000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toTwitter:" destination="jDF-68-VxG" eventType="touchUpInside" id="4cJ-F3-xxe"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AH-kV-0i5">
                                 <rect key="frame" x="277" y="255" width="45.5" height="21"/>
                                 <animations/>
@@ -191,6 +202,17 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvN-0n-QKq">
+                                <rect key="frame" x="240" y="444" width="119" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <state key="normal" title="See on GitHub">
+                                    <color key="titleColor" red="0.1099797379" green="0.0" blue="0.65876554320000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toGitHub:" destination="jDF-68-VxG" eventType="touchUpInside" id="8gD-cc-sWw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.32090984769999997" green="0.78499265399999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -199,13 +221,17 @@
                             <constraint firstItem="C3Z-A5-qg3" firstAttribute="centerX" secondItem="IzE-kM-FMY" secondAttribute="centerX" id="GnN-TR-TaV"/>
                             <constraint firstItem="4AH-kV-0i5" firstAttribute="top" secondItem="C3Z-A5-qg3" secondAttribute="bottom" constant="19" id="Nvs-zi-cg9"/>
                             <constraint firstItem="IzE-kM-FMY" firstAttribute="centerX" secondItem="H7j-l1-iwQ" secondAttribute="centerX" id="TEt-Vw-nDD"/>
+                            <constraint firstItem="fBI-j3-5TY" firstAttribute="top" secondItem="gvN-0n-QKq" secondAttribute="bottom" constant="14" id="Woj-fA-ra6"/>
                             <constraint firstItem="IzE-kM-FMY" firstAttribute="top" secondItem="mz0-Sp-LYL" secondAttribute="bottom" constant="19" id="ZGu-wE-AhR"/>
                             <constraint firstAttribute="bottom" secondItem="ZNm-nK-aLw" secondAttribute="bottom" constant="20" symbolic="YES" id="cUr-pY-AJy"/>
                             <constraint firstItem="IzE-kM-FMY" firstAttribute="leading" secondItem="H7j-l1-iwQ" secondAttribute="leadingMargin" constant="10" id="f9N-dj-7sW"/>
                             <constraint firstItem="4AH-kV-0i5" firstAttribute="centerX" secondItem="C3Z-A5-qg3" secondAttribute="centerX" id="fNU-WX-Mcn"/>
+                            <constraint firstItem="fBI-j3-5TY" firstAttribute="centerX" secondItem="ZNm-nK-aLw" secondAttribute="centerX" id="ian-kk-gdh"/>
                             <constraint firstItem="C3Z-A5-qg3" firstAttribute="top" secondItem="IzE-kM-FMY" secondAttribute="bottom" constant="21" id="koD-Wy-WL6"/>
+                            <constraint firstItem="ZNm-nK-aLw" firstAttribute="top" secondItem="fBI-j3-5TY" secondAttribute="bottom" constant="23" id="nzh-mH-xHo"/>
                             <constraint firstItem="IzE-kM-FMY" firstAttribute="top" secondItem="mz0-Sp-LYL" secondAttribute="bottom" constant="29" id="qMD-iB-Csq"/>
                             <constraint firstItem="mz0-Sp-LYL" firstAttribute="centerX" secondItem="IzE-kM-FMY" secondAttribute="centerX" id="sGC-5E-lTV"/>
+                            <constraint firstItem="gvN-0n-QKq" firstAttribute="centerX" secondItem="fBI-j3-5TY" secondAttribute="centerX" id="vR1-i6-5vJ"/>
                             <constraint firstItem="mz0-Sp-LYL" firstAttribute="top" secondItem="wkG-xR-lXn" secondAttribute="bottom" constant="8" symbolic="YES" id="zaW-ev-5Ma"/>
                         </constraints>
                         <variation key="default">
@@ -215,10 +241,12 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="emailLabel" destination="4AH-kV-0i5" id="MAW-Ev-Hjm"/>
+                        <outlet property="emailLabel" destination="4AH-kV-0i5" id="hU2-oX-hyU"/>
+                        <outlet property="gitHubButton" destination="gvN-0n-QKq" id="qCD-xR-ZuX"/>
                         <outlet property="imageView" destination="mz0-Sp-LYL" id="0bT-GG-s1J"/>
                         <outlet property="nameLabel" destination="IzE-kM-FMY" id="iUZ-zy-rFY"/>
-                        <outlet property="phoneLabel" destination="C3Z-A5-qg3" id="zU3-k7-bIA"/>
+                        <outlet property="phoneLabel" destination="C3Z-A5-qg3" id="Tlg-av-yTk"/>
+                        <outlet property="twitterButton" destination="fBI-j3-5TY" id="EBR-6Z-ue6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bi0-85-KxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -412,7 +440,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5q-Dd-Rn4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5q-Dd-Rn4">
                                 <rect key="frame" x="279" y="218.5" width="42" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

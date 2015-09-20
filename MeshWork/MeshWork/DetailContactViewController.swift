@@ -12,12 +12,15 @@ class DetailContactViewController: UIViewController {
 
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
-	@IBOutlet weak var emailLabel: UILabel!
+
 	@IBOutlet weak var phoneLabel: UILabel!
+	@IBOutlet weak var emailLabel: UILabel!
 	
 	var contact : ContactObject!
 	let manager = ContactsManager()
-	
+
+	@IBOutlet weak var gitHubButton: UIButton!
+	@IBOutlet weak var twitterButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 		if let pData = contact.photo {
@@ -27,6 +30,20 @@ class DetailContactViewController: UIViewController {
 		nameLabel.text = contact.name
 		emailLabel.text = contact.email
 		phoneLabel.text = contact.phoneNumber
+		
+		if contact.twitter == nil {
+			twitterButton.removeFromSuperview()
+		}
+		if contact.github == nil {
+			gitHubButton.removeFromSuperview()
+		}
+		if contact.phoneNumber == nil {
+			phoneLabel.removeFromSuperview()
+		}
+		
+		if contact.email == nil {
+			emailLabel.removeFromSuperview()
+		}
         // Do any additional setup after loading the view.
     }
 
@@ -34,7 +51,13 @@ class DetailContactViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	@IBAction func toTwitter(sender: AnyObject) {
+		UIApplication.sharedApplication().openURL(NSURL(string: "twitter://user?screen_name=" + contact.twitter!)!)
+	}
 	
+	@IBAction func toGitHub(sender: AnyObject) {
+		UIApplication.sharedApplication().openURL(NSURL(string: "https://github.com/" + contact.github!)!)
+	}
 	@IBAction func addToContacts(sender: AnyObject) {
 		manager.addContact(contact)
 		
@@ -52,7 +75,6 @@ class DetailContactViewController: UIViewController {
 				})
 		}
 	}
-    
 
     /*
     // MARK: - Navigation
